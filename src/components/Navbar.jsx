@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" bg-[#00011b] py-4">
+    <div className=" bg-[#000b17] py-4">
       <div className=" text-white px-10  container mx-auto flex justify-between items-center">
         <div>
           <img src="/Code hive Branding-01.png" className="w-60" alt="logo" />

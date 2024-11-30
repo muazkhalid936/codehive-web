@@ -11,7 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-[#00011b] flex justify-center items-center py-20 md:py-2 md:h-[400px]">
+    <div className="bg-gradient-to-b from-[#0a1929]   to-[#020d1a] flex justify-center items-center py-20 md:py-2 md:h-[400px]">
       <div className="container flex flex-col md:flex-row gap-10 md:gap-0 mx-auto">
         <div className="flex  flex-col  md:w-[70%] gap-4 md:gap-0 justify-between items-start">
           <div className="flex gap-4">
