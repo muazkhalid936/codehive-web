@@ -10,7 +10,7 @@
   font-family: "Roboto", sans-serif;
 }
 .form-input input {
-  @apply bg-transparent border-none outline-none border-b-2 border-white text-white ;
+  @apply bg-transparent border-none outline-none border-b-2 border-white text-white;
 }
 
 .container {
@@ -49,4 +49,12 @@
   .container {
     max-width: 1320px;
   }
+}
+
+.content_title::before {
+  font-weight: 400;
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 10vh;
+  text-align: center;
 }

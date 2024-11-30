@@ -4,6 +4,7 @@ import MainHero from "../components/MainHero";
 import Carousel from "../components/carousel";
 import ContactForm from "../components/Contact";
 import OurIndustries from "../components/OurIndustries";
+import Stack from "../components/Stack";
 export default function Home() {
   return (
     <>
@@ -12,7 +13,9 @@ export default function Home() {
         <OurProcess />
         <OurIndustries />
         <Carousel />
-        <ContactForm /> 
+
+        <Stack />
+        <ContactForm />
       </div>
     </>
   );
