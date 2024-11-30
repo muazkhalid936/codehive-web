@@ -13,6 +13,8 @@
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.46",
     "cropperjs": "^1.6.2",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.17",
     "next": "15.0.3",
     "react": "^18.3.1",
     "react-cropper": "^2.3.3",

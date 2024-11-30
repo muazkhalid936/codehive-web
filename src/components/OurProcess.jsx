@@ -2,7 +2,7 @@ import React from "react";
 
 const OurProcess = () => {
   return (
-    <div className="flex flex-col h-[100vh] justify-center  container mx-auto text-white text-center text-6xl font-extrabold">
+    <div className="flex flex-col  justify-center  container mx-auto text-white text-center text-6xl font-extrabold">
       <p className="text-4xl font-bold">Our Process</p>
 
       <div

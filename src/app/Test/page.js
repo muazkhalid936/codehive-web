@@ -3,11 +3,9 @@ import Spline from "@splinetool/react-spline";
 
 const Test = () => {
   return (
-    <div className="w-[60%] h-[60vh]">
-
-      <Spline scene="/Logo animation.spline" />
+    <div>
+      <h1>Test</h1>
     </div>
-    
   );
 };
 
