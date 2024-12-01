@@ -6,41 +6,41 @@ gsap.registerPlugin(ScrollTrigger);
 
 const StackingImages = () => {
   useEffect(() => {
-    // Animation for the first image (sticky)
+    // First Image (Sticky behavior with GSAP ScrollTrigger)
     gsap.to(".image1", {
       scrollTrigger: {
         trigger: ".container",
-        start: "top top",
-        end: "bottom top",
+        start: "top top", // Start the animation when the container hits the top of the viewport
+        end: "bottom top", // End when the container has fully scrolled up
         scrub: true,
-        pin: true, // This will "stick" the first image in place
+        pin: true, // Pin the image as you scroll
       },
-      y: "0vh",
-      opacity: 1,
+      y: "0vh", // Move the image vertically to 0 (it starts off-screen)
+      opacity: 1, // Make the image visible
     });
 
-    // Animation for the second image (scrolls up to overlap the first)
+    // Second Image (Appears after the first one has finished)
     gsap.to(".image2", {
       scrollTrigger: {
-        trigger: ".image2",
-        start: "top bottom",
-        end: "bottom top",
+        trigger: ".image1", // Start the animation when the first image has fully scrolled
+        start: "bottom top", // The second image starts as soon as the first one finishes
+        end: "bottom top", // Finish when the first image scrolls fully out of the viewport
         scrub: true,
       },
-      y: "0vh", // It will slide from bottom to top
-      opacity: 1,
+      y: "0vh", // Slide the second image up
+      opacity: 1, // Make the image visible
     });
 
-    // Animation for the third image (scrolls up to overlap the second)
+    // Third Image (Appears after the second one has finished)
     gsap.to(".image3", {
       scrollTrigger: {
-        trigger: ".image3",
-        start: "top bottom",
-        end: "bottom top",
+        trigger: ".image2", // Start when the second image finishes
+        start: "bottom top", // Trigger the third image animation when the second image finishes scrolling
+        end: "bottom top", // Finish the animation when the second image scrolls fully out
         scrub: true,
       },
-      y: "0vh", // It will slide from bottom to top
-      opacity: 1,
+      y: "0vh", // Slide the third image up
+      opacity: 1, // Make the image visible
     });
   }, []);
 

@@ -11,10 +11,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" bg-[#000b17] py-4">
+    <div className=" bg-[#000b17] py-4 flex justify-center items-center">
       <div className=" text-white px-10  container mx-auto flex justify-between items-center">
         <div>
-          <img src="/Code hive Branding-01.png" className="w-60" alt="logo" />
+          <img
+            src="/Code hive Branding-01.png"
+            className=" w-40 md:w-60"
+            alt="logo"
+          />
         </div>
         <div className=" hidden lg:flex gap-4 text-sm">
           <Link href="/">Home</Link>
@@ -33,7 +37,11 @@ const Navbar = () => {
         </div>
 
         <div className="lg:hidden" onClick={toggleSidebar}>
-          <FiMenu className="w-6 h-6 cursor-pointer " />
+          <FiMenu
+            className={`w-6 h-6 cursor-pointer duration-300 ease-in-out ${
+              isSidebarOpen ? "rotate-90" : ""
+            }`}
+          />
         </div>
       </div>
 
