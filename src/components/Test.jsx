@@ -87,47 +87,84 @@ const HorizontalScroll = () => {
             Card {i + 1}
           </div>
         ))} */}
+
           <Card
             className="card"
-            head="Wordsmith – AI"
-            para="Writing and summarizing AI assistant platform."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
+            head="Al Abour"
+            para="Your description for Al Abour."
+            bgImg="url('/Homapage/carosuel/al abour.jpg')"
           />
           <Card
             className="card"
-            head="Wordsmith – AI"
-            para="Writing and summarizing AI assistant platform."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
+            head="Caption Gen"
+            para="Your description for Caption Gen."
+            bgImg="url('/Homapage/carosuel/caption gen.png')"
           />
           <Card
             className="card"
-            head="Wordsmith – AI"
-            para="Writing and summarizing AI assistant platform."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
+            head="Clixpox"
+            para="Your description for Clixpox."
+            bgImg="url('/Homapage/carosuel/clixpox.png')"
           />
           <Card
             className="card"
-            head="Wordsmith – AI"
-            para="Writing and summarizing AI assistant platform."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
+            head="Doctor Booking App"
+            para="Your description for Doctor Booking App."
+            bgImg="url('/Homapage/carosuel/doctor booking app.jpg')"
           />
           <Card
             className="card"
-            head="Wordsmith – AI"
-            para="Writing and summarizing AI assistant platform."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
+            head="Email App"
+            para="Your description for Email App."
+            bgImg="url('/Homapage/carosuel/Email App.jpg')"
           />
           <Card
             className="card"
-            head="Wordsmith – AI"
-            para="Writing and summarizing AI assistant platform."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
+            head="Faaolun"
+            para="Your description for Faaolun."
+            bgImg="url('/Homapage/carosuel/faaolun.jpg')"
           />
           <Card
             className="card"
-            head="Wordsmith – AI"
-            para="Writing and summarizing AI assistant platform."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
+            head="Fitverse"
+            para="Your description for Fitverse."
+            bgImg="url('/Homapage/carosuel/fitverse.png')"
+          />
+          <Card
+            className="card"
+            head="Food Inventory"
+            para="Your description for Food Inventory."
+            bgImg="url('/Homapage/carosuel/food inventory.jpg')"
+          />
+          <Card
+            className="card"
+            head="Instant Save"
+            para="Your description for Instant Save."
+            bgImg="url('/Homapage/carosuel/instantsave.png')"
+          />
+          <Card
+            className="card"
+            head="Laam"
+            para="Your description for Laam."
+            bgImg="url('/Homapage/carosuel/laam.jpg')"
+          />
+          <Card
+            className="card"
+            head="Legal Wise"
+            para="Your description for Legal Wise."
+            bgImg="url('/Homapage/carosuel/legal wise.jpg')"
+          />
+          <Card
+            className="card"
+            head="Saloon Booking"
+            para="Your description for Saloon Booking."
+            bgImg="url('/Homapage/carosuel/saloon booking.jpg')"
+          />
+          <Card
+            className="card"
+            head="Wordsmith AI"
+            para="Your description for Wordsmith AI."
+            bgImg="url('/Homapage/carosuel/wordsmith Al.png')"
           />
         </div>
       </div>

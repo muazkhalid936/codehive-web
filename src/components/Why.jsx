@@ -92,7 +92,7 @@ const Why = () => {
   }, []);
 
   return (
-    <div className="container h-screen mx-auto flex flex-col justify-center items-center text-5xl text-white space-y-16">
+    <div className="container h-screen mx-auto flex flex-col justify-center items-center text-2xl md:text-5xl text-white space-y-16">
       <h1 className="heading1">Why you choose us?</h1>
       <div
         className="h-[20vh] heading"

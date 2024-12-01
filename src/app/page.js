@@ -14,7 +14,7 @@ export default function Home() {
         <MainHero />
         <Why />
         <OurProcess />
-        <Stack />
+        {/* <Stack /> */}
         <OurIndustries />
         {/* <Carousel /> */}
         <div className="container mx-auto">

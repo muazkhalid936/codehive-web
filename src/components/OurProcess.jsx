@@ -13,7 +13,7 @@ const OurProcess = () => {
       </div>
 
       <div className="flex md:gap-10  flex-col md:flex-row">
-        <div className="flex  w-full md:w-1/2 gap-5 items-center text-white">
+        <div className="flex flex-col  w-full md:w-1/2 gap-10 items-start text-white">
           <div className="flex gap-5">
             {" "}
             <FaComments className="text-4xl" />
@@ -21,10 +21,21 @@ const OurProcess = () => {
             <FaPen className="text-4xl" />
             <MdRocketLaunch className="text-4xl" />
           </div>
+
+          <div>
+            <p className="bg-gradient-to-r text-5xl font-extrabold from-white to-blue-500 bg-clip-text text-transparent">
+              Project <br /> Vision
+            </p>
+          </div>
+          <p className="text-base text-gray-500">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque
+            minima temporibus consequatur placeat neque blanditiis rerum
+            nesciunt nemo dolorem a quae consequuntur{" "}
+          </p>
         </div>
 
         <div className="w-full md:w-1/2 flex justify-center items-center">
-          <img src="/process/bg.jpg" className="h-[300px]" />
+          <img src="/process/bg.jpg" className="h-[200px] my-auto md:h-[300px] rounded-3xl border-2 border-blue-400" />
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ const StackingImages = () => {
   }, []);
 
   return (
-    <div className="container mt-20 h-[300vh] relative">
+    <div className="container my-20 h-[300vh] relative">
       {/* First Image */}
       <div className="image1 absolute h-[50vh] bg-blue-400 border-2 border-black flex items-center justify-center text-xl font-bold opacity-0 translate-y-[100vh] z-[1]">
         <img src="/3.png" className="w-full" />
