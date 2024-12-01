@@ -13,7 +13,7 @@ export default function Home() {
       <div className="bg-[#000B17]">
         <MainHero />
         <Why />
-        {/* <OurProcess /> */}
+        <OurProcess />
         <Stack />
         <OurIndustries />
         {/* <Carousel /> */}

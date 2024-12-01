@@ -1,30 +1,30 @@
 import React from "react";
+import { FaComments, FaDesktop, FaPen, FaMobileAlt } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { MdRocketLaunch } from "react-icons/md";
 
 const OurProcess = () => {
   return (
-    <div className="flex flex-col  justify-center mt-32 container mx-auto text-white text-center text-6xl font-extrabold">
-      <p className="text-4xl font-bold">Our Process</p>
+    <div className="container my-20 mx-auto w-full flex flex-col gap-10 ">
+      <div>
+        <h1 className="text-5xl text-center font-extralight text-white">
+          Our Process
+        </h1>
+      </div>
 
-      <div
-        className="h-[200px] md:h-[400px] flex justify-center items-center gap-10 rounded-xl "
-        style={{
-          backgroundImage: "url('/process/bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "bottom",
-          overlay: "darken",
-        }}
-      >
-        <div className="flex  w-1/2 font-medium text-sm md:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          quaerat vero ex animi magni minima laudantium repellendus sed deserunt
-          at!
+      <div className="flex md:gap-10  flex-col md:flex-row">
+        <div className="flex  w-full md:w-1/2 gap-5 items-center text-white">
+          <div className="flex gap-5">
+            {" "}
+            <FaComments className="text-4xl" />
+            <FaDesktop className="text-4xl" />
+            <FaPen className="text-4xl" />
+            <MdRocketLaunch className="text-4xl" />
+          </div>
         </div>
-        <div className="flex justify-center w-1/2">
-          <img
-            src="/process/1.jpg"
-            className="w-[330px] h-[180px] md:w-[430px] md:h-[350px] border-2 border-blue-300 rounded-2xl"
-            alt="process"
-          />
+
+        <div className="w-full md:w-1/2 flex justify-center items-center">
+          <img src="/process/bg.jpg" className="h-[300px]" />
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const OurIndustries = () => {
   return (
-    <div className="bg-[#000b17] mt-20">
+    <div className="bg-[#000b17] my-20">
       <div className="container mx-auto flex flex-col gap-4">
         <div className="text-5xl text-white text-center font-bold">
           Our Industries
