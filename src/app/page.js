@@ -6,12 +6,15 @@ import ContactForm from "../components/Contact";
 import OurIndustries from "../components/OurIndustries";
 import Stack from "../components/Stack";
 import Test from "../components/Test";
+import Why from "../components/Why";
 export default function Home() {
   return (
     <>
       <div className="bg-[#000B17]">
         <MainHero />
-        <OurProcess />
+        <Why />
+        {/* <OurProcess /> */}
+        <Stack />
         <OurIndustries />
         {/* <Carousel /> */}
         <div className="container mx-auto">
@@ -20,7 +23,6 @@ export default function Home() {
           </p>
         </div>
         <Test />
-        <Stack />
         <ContactForm />
       </div>
     </>

@@ -1,6 +1,8 @@
+// src/components/Test.jsx
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis"; // Import Lenis
 import Card from "./Card";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -8,6 +10,20 @@ const HorizontalScroll = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const lenis = new Lenis(); // Initialize Lenis
+
+    // Update the scroll animation on each frame
+    const update = (time) => {
+      lenis.raf(time);
+      ScrollTrigger.update(); // Update ScrollTrigger
+    };
+
+    // Start the Lenis animation
+    requestAnimationFrame(function raf(time) {
+      update(time);
+      requestAnimationFrame(raf);
+    });
+
     const container = containerRef.current;
     const cards = container.querySelector(".card-row");
 
@@ -24,6 +40,11 @@ const HorizontalScroll = () => {
         pin: true,
       },
     });
+
+    return () => {
+      // Cleanup on component unmount
+      lenis.destroy();
+    };
   }, []);
 
   return (
