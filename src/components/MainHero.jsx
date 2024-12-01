@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 const MainHero = () => {
   return (
-    <div className=" container overflow-hidden relative pl-10 flex flex-row bg-[#000B17] mx-auto md:pt-20">
+    <div className=" container md:h-screen overflow-hidden relative pl-10 flex flex-row bg-[#000B17] mx-auto md:pt-20">
       {/* Text Content */}
       <div className="flex w-[50%]  flex-col gap-5 text-white  md:pr-10">
         <p className="text-[20px] sm:text-3xl lg:text-5xl z-10 font-extrabold leading-snug">

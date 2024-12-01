@@ -4,81 +4,91 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 
 const Why = () => {
-  const containerRef = useRef(null);
+  const headingsRef = useRef([]);
 
   useEffect(() => {
     // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
     });
 
-    function raf(time) {
+    const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
-    }
+    };
     requestAnimationFrame(raf);
 
     // Register GSAP ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Sync ScrollTrigger with Lenis
+    // Link Lenis with GSAP ScrollTrigger
+    ScrollTrigger.scrollerProxy(document.body, {
+      scrollTop(value) {
+        return lenis.scroll !== undefined ? lenis.scroll : value;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      pinType:
+        document.body.style.overflowY === "scroll" ? "fixed" : "transform",
+    });
+
+    // Update ScrollTrigger on Lenis scroll
     lenis.on("scroll", ScrollTrigger.update);
 
-    const headings = containerRef.current.querySelectorAll(".heading");
-
-    // Initial animation for individual headings
-    headings.forEach((heading) => {
+    // GSAP animations with ScrollTrigger
+    headingsRef.current.forEach((heading, index) => {
       gsap.fromTo(
         heading,
-        { opacity: 0, y: 50 },
+        { y: 100, opacity: 0 }, // Start state
         {
-          opacity: 1,
           y: 0,
-          duration: 1,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: heading,
-            start: "top center",
-            end: "bottom center",
-            toggleActions: "play reverse play reverse",
+            start: "top 80%", // Animation starts as the element enters the viewport
+            end: "top 50%", // Animation ends halfway into the viewport
+            toggleActions: "play reverse play reverse", // Play and reverse on scroll
+            scrub: true, // Smooth scroll-linked animation
           },
         }
       );
     });
 
-    // Animation to stack all headings in a column at the end
-    gsap.to(headings, {
-      y: (index) => index * 100, // Adjust spacing between headings
-      opacity: 1,
-      duration: 1,
-      stagger: 0.2, // Stagger animation for smoother transition
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "bottom bottom", // Trigger when the container bottom hits viewport bottom
-        end: "+=500", // Scroll distance to complete the animation
-        pin: true, // Pin the container during this animation
-        scrub: true, // Smooth transition tied to scroll position
-      },
-    });
-
+    // Clean up Lenis and ScrollTrigger
     return () => {
-      lenis.destroy(); // Cleanup Lenis instance
+      lenis.destroy();
+      ScrollTrigger.kill();
     };
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="container mx-auto flex flex-col justify-center items-center text-5xl text-white space-y-16"
-    >
-      <h1 className="heading">Why</h1>
-      <div className="h-[50vh] heading">
+    <div className="container h-screen mx-auto flex flex-col justify-center items-center text-5xl text-white space-y-16">
+      <h1 className="heading1">Why</h1>
+      <div
+        className="h-[20vh] heading"
+        ref={(el) => (headingsRef.current[0] = el)}
+      >
         <h1>Unrivaled Expertise</h1>
       </div>
-      <div className="h-[50vh] heading">
+      <div
+        className="h-[20vh] heading"
+        ref={(el) => (headingsRef.current[1] = el)}
+      >
         <h1>Customer-Centric Approach</h1>
       </div>
-      <div className="h-[50vh] heading">
+      <div
+        className="h-[20vh] heading"
+        ref={(el) => (headingsRef.current[2] = el)}
+      >
         <h1>End-to-End Support</h1>
       </div>
     </div>
