@@ -7,13 +7,13 @@ const OurProcess = () => {
   return (
     <div className="container my-20 mx-auto w-full flex flex-col gap-10 ">
       <div>
-        <h1 className="text-5xl text-center font-extrabold text-white">
+        <h1 className="text-5xl mb-10 text-center font-extrabold text-white">
           Our Process
         </h1>
       </div>
 
       <div className="flex gap-10  flex-col md:flex-row">
-        <div className="flex flex-col  w-full md:w-1/2 gap-10 items-start text-white">
+        <div className="flex card-1 flex-col  w-full md:w-1/2 gap-10 items-start text-white">
           <div className="flex gap-5">
             {" "}
             <FaComments className="text-4xl" />
@@ -34,8 +34,11 @@ const OurProcess = () => {
           </p>
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <img src="/process/bg.jpg" className="h-[200px] my-auto md:h-[300px] rounded-3xl border-2 border-blue-400" />
+        <div className="w-full card-2 md:w-1/2 flex justify-center items-center">
+          <img
+            src="/process/bg.jpg"
+            className="h-[200px] my-auto md:h-[300px] rounded-3xl border-2 border-blue-400"
+          />
         </div>
       </div>
     </div>
