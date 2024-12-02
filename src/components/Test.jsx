@@ -1,4 +1,3 @@
-// src/components/Test.jsx
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,13 +8,85 @@ gsap.registerPlugin(ScrollTrigger);
 const HorizontalScroll = () => {
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    const lenis = new Lenis(); // Initialize Lenis
+  const cardsData = [
+    {
+      head: "Al Abour",
+      para: "Your description for Al Abour.",
+      bgImg: "/Homapage/carosuel/al.jpg",
+    },
+    {
+      head: "Caption Gen",
+      para: "Your description for Caption Gen.",
+      bgImg: "/Homapage/carosuel/caption.png",
+    },
+    {
+      head: "Clixpox",
+      para: "Your description for Clixpox.",
+      bgImg: "/Homapage/carosuel/clixpox.png",
+    },
+    {
+      head: "Doctor Booking App",
+      para: "Your description for Doctor Booking App.",
+      bgImg: "/Homapage/carosuel/doctor.jpg",
+    },
+    {
+      head: "Email App",
+      para: "Your description for Email App.",
+      bgImg: "/Homapage/carosuel/Email.jpg",
+    },
+    {
+      head: "Faaolun",
+      para: "Your description for Faaolun.",
+      bgImg: "/Homapage/carosuel/faaolun.jpg",
+    },
+    {
+      head: "Fitverse",
+      para: "Your description for Fitverse.",
+      bgImg: "/Homapage/carosuel/fitverse.png",
+    },
+    {
+      head: "Food Inventory",
+      para: "Your description for Food Inventory.",
+      bgImg: "/Homapage/carosuel/food.jpg",
+    },
+    {
+      head: "Instant Save",
+      para: "Your description for Instant Save.",
+      bgImg: "/Homapage/carosuel/instantsave.png",
+    },
+    {
+      head: "Laam",
+      para: "Your description for Laam.",
+      bgImg: "/Homapage/carosuel/laam.jpg",
+    },
+    {
+      head: "Legal Wise",
+      para: "Your description for Legal Wise.",
+      bgImg: "/Homapage/carosuel/legal.jpg",
+    },
+    {
+      head: "Saloon Booking",
+      para: "Your description for Saloon Booking.",
+      bgImg: "/Homapage/carosuel/saloon.jpg",
+    },
+    {
+      head: "Wordsmith AI",
+      para: "Your description for Wordsmith AI.",
+      bgImg: "/Homapage/carosuel/wordsmith.png",
+    },
+  ];
 
-    // Update the scroll animation on each frame
+  useEffect(() => {
+    const lenis = new Lenis({
+      smooth: true,
+      smoothTouch: true, // Ensures smooth scrolling on touch devices
+      direction: "vertical", // Lenis scroll direction
+    });
+
+    // Update Lenis and ScrollTrigger on each animation frame
     const update = (time) => {
       lenis.raf(time);
-      ScrollTrigger.update(); // Update ScrollTrigger
+      ScrollTrigger.update();
     };
 
     // Start the Lenis animation
@@ -26,24 +97,23 @@ const HorizontalScroll = () => {
 
     const container = containerRef.current;
     const cards = container.querySelector(".card-row");
-
     const totalScrollWidth = cards.scrollWidth - container.clientWidth;
 
     gsap.to(cards, {
-      x: -totalScrollWidth, // Move cards left
+      x: -totalScrollWidth, // Horizontal scroll effect
       ease: "none",
       scrollTrigger: {
         trigger: container,
         start: "top top",
-        end: `+=${cards.scrollWidth}`, // Total horizontal scroll amount
+        end: `+=${cards.scrollWidth}`, // Total scroll amount
         scrub: true,
         pin: true,
+        invalidateOnRefresh: true, // Recalculates on viewport resize
       },
     });
 
     return () => {
-      // Cleanup on component unmount
-      lenis.destroy();
+      lenis.destroy(); // Clean up Lenis on unmount
     };
   }, []);
 
@@ -72,105 +142,12 @@ const HorizontalScroll = () => {
             top: "50%",
             left: "0",
             transform: "translateY(-50%)",
+            willChange: "transform", // GPU acceleration
           }}
         >
-          {/* {Array.from({ length: 10 }).map((_, i) => (
-          <div
-            key={i}
-            className="card"
-            style={{
-              flex: '0 0 200px',
-              height: '150px',
-              background: '#ccc',
-              borderRadius: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-            }}
-          >
-            Card {i + 1}
-          </div>
-        ))} */}
-
-          <Card
-            className="card"
-            head="Al Abour"
-            para="Your description for Al Abour."
-            bgImg="url('/Homapage/carosuel/al abour.jpg')"
-          />
-          <Card
-            className="card"
-            head="Caption Gen"
-            para="Your description for Caption Gen."
-            bgImg="url('/Homapage/carosuel/caption gen.png')"
-          />
-          <Card
-            className="card"
-            head="Clixpox"
-            para="Your description for Clixpox."
-            bgImg="url('/Homapage/carosuel/clixpox.png')"
-          />
-          <Card
-            className="card"
-            head="Doctor Booking App"
-            para="Your description for Doctor Booking App."
-            bgImg="url('/Homapage/carosuel/doctor booking app.jpg')"
-          />
-          <Card
-            className="card"
-            head="Email App"
-            para="Your description for Email App."
-            bgImg="url('/Homapage/carosuel/Email App.jpg')"
-          />
-          <Card
-            className="card"
-            head="Faaolun"
-            para="Your description for Faaolun."
-            bgImg="url('/Homapage/carosuel/faaolun.jpg')"
-          />
-          <Card
-            className="card"
-            head="Fitverse"
-            para="Your description for Fitverse."
-            bgImg="url('/Homapage/carosuel/fitverse.png')"
-          />
-          <Card
-            className="card"
-            head="Food Inventory"
-            para="Your description for Food Inventory."
-            bgImg="url('/Homapage/carosuel/food inventory.jpg')"
-          />
-          <Card
-            className="card"
-            head="Instant Save"
-            para="Your description for Instant Save."
-            bgImg="url('/Homapage/carosuel/instantsave.png')"
-          />
-          <Card
-            className="card"
-            head="Laam"
-            para="Your description for Laam."
-            bgImg="url('/Homapage/carosuel/laam.jpg')"
-          />
-          <Card
-            className="card"
-            head="Legal Wise"
-            para="Your description for Legal Wise."
-            bgImg="url('/Homapage/carosuel/legal wise.jpg')"
-          />
-          <Card
-            className="card"
-            head="Saloon Booking"
-            para="Your description for Saloon Booking."
-            bgImg="url('/Homapage/carosuel/saloon booking.jpg')"
-          />
-          <Card
-            className="card"
-            head="Wordsmith AI"
-            para="Your description for Wordsmith AI."
-            bgImg="url('/Homapage/carosuel/wordsmith AI.png')"
-          />
+          {cardsData.map(({ head, para, bgImg }, index) => (
+            <Card key={index} head={head} para={para} bgImg={`url(${bgImg})`} />
+          ))}
         </div>
       </div>
     </div>
