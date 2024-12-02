@@ -5,9 +5,9 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 const MainHero = () => {
   return (
-    <div className=" container md:h-screen overflow-hidden relative pl-10 flex flex-row bg-[#000B17] mx-auto md:pt-20">
+    <div className=" container md:h-[600px] overflow-hidden relative pl-10 flex flex-row bg-[#000B17] mx-auto md:pt-20">
       {/* Text Content */}
-      <div className="flex w-[50%]  flex-col gap-5 text-white  md:pr-10">
+      <div className="flex w-[50%]  flex-col md:gap-5 text-white  md:pr-10">
         <p className="text-[20px] sm:text-3xl lg:text-5xl z-10 font-extrabold leading-snug">
           BESPOKE{" "}
           <span className="text-[20px] sm:text-3xl lg:text-5xl text-blue-500">
@@ -28,7 +28,7 @@ const MainHero = () => {
       </div>
 
       {/* Spline Component */}
-      <div className="flex flex-1 scale-[0.3] sm:scale-50 lg:scale-90 absolute -top-[100px]  md:top-0 h-[400px]  w-[800px] -right-[21rem]  md:-right-60  justify-end text-white items-end">
+      <div className="flex flex-1 scale-[0.3] sm:scale-50 lg:scale-90 absolute -top-[100px]  md:top-0 h-[400px]  w-[850px] -right-[21rem]  md:-right-60  justify-end text-white items-end">
         <Spline className="" scene="/Logo animation.spline" />
       </div>
     </div>

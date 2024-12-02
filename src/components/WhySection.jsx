@@ -47,7 +47,7 @@ const WhySection = () => {
   };
 
   return (
-    <div className="container h-screen mx-auto flex flex-col justify-center items-center text-2xl md:text-5xl text-white space-y-16">
+    <div className="container md:h-[600px] my-20 font-extrabold  mx-auto flex flex-col justify-center items-center text-2xl md:text-5xl text-white md:space-y-16">
       <motion.h1
         className="heading1"
         initial="hidden"
@@ -64,7 +64,7 @@ const WhySection = () => {
       ].map((text, index) => (
         <motion.div
           key={index}
-          className=" heading"
+          className="my-5 heading"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}

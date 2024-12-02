@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+"use client";
+import "./Test1.css";
+import { useRef } from "react";
 
-const StackingImages = () => {
+export default function Stack() {
   return (
     <div class="container">
       <ul id="cards">
@@ -31,6 +33,4 @@ const StackingImages = () => {
       </ul>
     </div>
   );
-};
-
-export default StackingImages;
+}

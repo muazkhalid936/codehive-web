@@ -7,12 +7,12 @@ const OurProcess = () => {
   return (
     <div className="container my-20 mx-auto w-full flex flex-col gap-10 ">
       <div>
-        <h1 className="text-5xl text-center font-extralight text-white">
+        <h1 className="text-5xl text-center font-extrabold text-white">
           Our Process
         </h1>
       </div>
 
-      <div className="flex md:gap-10  flex-col md:flex-row">
+      <div className="flex gap-10  flex-col md:flex-row">
         <div className="flex flex-col  w-full md:w-1/2 gap-10 items-start text-white">
           <div className="flex gap-5">
             {" "}
@@ -27,7 +27,7 @@ const OurProcess = () => {
               Project <br /> Vision
             </p>
           </div>
-          <p className="text-base text-gray-500">
+          <p className="text-base text-justify text-gray-500">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque
             minima temporibus consequatur placeat neque blanditiis rerum
             nesciunt nemo dolorem a quae consequuntur{" "}

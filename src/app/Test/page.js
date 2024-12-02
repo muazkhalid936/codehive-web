@@ -48,11 +48,11 @@ const Test = () => {
         ".card:not(:first-child)", // Select all but the first card
         {
           x: 1000,
-          rotate:90
+          rotate: 90,
         },
         {
           x: 0,
-          rotate:0,
+          rotate: 0,
           stagger: 1,
           scrollTrigger: {
             pin: container2.current,
@@ -66,23 +66,30 @@ const Test = () => {
   }, []);
 
   return (
-    <div ref={container2} className="h-[100vh] flex items-center justify-center">
-      <div className="relative w-72 h-[300px]">
-        {cities.map((city) => {
-          return (
-            <div className="card " key={city.key}>
-              <Image
-                src={city.img}
-                alt={city.city}
-                layout="fill"
-                className="rounded-3xl"
-              />
-              <p className="absolute bottom-0 p-4 left-0 text-white">{city.city}</p>
-            </div>
-          );
-        })}
+    <>
+      <div
+        ref={container2}
+        className="h-[100vh] flex items-center justify-center"
+      >
+        <div className="relative w-72 h-[300px]">
+          {cities.map((city) => {
+            return (
+              <div className="card " key={city.key}>
+                <Image
+                  src={city.img}
+                  alt={city.city}
+                  layout="fill"
+                  className="rounded-3xl"
+                />
+                <p className="absolute bottom-0 p-4 left-0 text-white">
+                  {city.city}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,28 +1,29 @@
 "use client";
+import { useState } from "react"; // Import useState
+import LoaderComponent from "../components/Loader";
 import OurProcess from "../components/OurProcess";
 import MainHero from "../components/MainHero";
-import Carousel from "../components/carousel";
+import Carousel from "../components/Carousel";
 import ContactForm from "../components/Contact";
 import OurIndustries from "../components/OurIndustries";
 import Stack from "../components/Stack";
 import Test from "../components/Test";
 import WhySection from "../components/WhySection";
+
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  const handleLoaderComplete = () => {
+    setLoading(false);
+  };
+
   return (
     <>
       <div className="bg-[#000B17]">
         <MainHero />
-        {/* <Why /> */}
         <WhySection />
         <OurProcess />
-        {/* <Stack /> */}
         <OurIndustries />
-        {/* <Carousel /> */}
-        {/* <div className="container mx-auto">
-          <p className="text-white text-center text-2xl md:text-5xl font-bold">
-            Our Recent Work
-          </p>
-        </div> */}
         <Test />
         <ContactForm />
       </div>
