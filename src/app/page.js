@@ -3,7 +3,6 @@ import { useState } from "react"; // Import useState
 import LoaderComponent from "../components/Loader";
 import OurProcess from "../components/OurProcess";
 import MainHero from "../components/MainHero";
-import Carousel from "../components/Carousel";
 import ContactForm from "../components/Contact";
 import OurIndustries from "../components/OurIndustries";
 import Stack from "../components/Stack";
