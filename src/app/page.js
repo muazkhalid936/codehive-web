@@ -9,7 +9,7 @@ import OurIndustries from "../components/OurIndustries";
 import Stack from "../components/Stack";
 import Test from "../components/Test";
 import WhySection from "../components/WhySection";
-
+import Why from "../components/Why";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -22,6 +22,7 @@ export default function Home() {
       <div className="bg-[#000B17]">
         <MainHero />
         <WhySection />
+        {/* <Why /> */}
         <OurProcess />
         <OurIndustries />
         <Test />

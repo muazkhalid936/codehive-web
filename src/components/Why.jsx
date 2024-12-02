@@ -59,6 +59,7 @@ const Why = () => {
             end: "top 50%", // Animation ends halfway into the viewport
             toggleActions: "play reverse play reverse", // Play and reverse on scroll
             scrub: true, // Smooth scroll-linked animation
+            pin: true,
           },
         }
       );
@@ -79,6 +80,7 @@ const Why = () => {
             end: "top 50%",
             toggleActions: "play reverse play reverse",
             scrub: true,
+            pin: true,
           },
         }
       );
@@ -95,7 +97,7 @@ const Why = () => {
     <div className="container h-screen mx-auto flex flex-col justify-center items-center text-2xl md:text-5xl text-white space-y-16">
       <h1 className="heading1">Why you choose us?</h1>
       <div
-        className="h-[20vh] heading"
+        className="h-[50vh] heading"
         ref={(el) => (headingsRef.current[0] = el)}
       >
         <h1 className="bg-gradient-to-r from-white to-blue-500 bg-clip-text text-transparent">
@@ -103,7 +105,7 @@ const Why = () => {
         </h1>
       </div>
       <div
-        className="h-[20vh] heading"
+        className="h-[50vh] heading"
         ref={(el) => (headingsRef.current[1] = el)}
       >
         <h1 className="bg-gradient-to-r from-white to-blue-500 bg-clip-text text-transparent">
@@ -111,7 +113,7 @@ const Why = () => {
         </h1>
       </div>
       <div
-        className="h-[20vh] heading"
+        className="h-[50vh] heading"
         ref={(el) => (headingsRef.current[2] = el)}
       >
         <h1 className="bg-gradient-to-r from-white to-blue-500 bg-clip-text text-transparent">
