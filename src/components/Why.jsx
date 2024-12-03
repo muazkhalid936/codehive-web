@@ -80,7 +80,7 @@ const Why = () => {
             end: "top 50%",
             toggleActions: "play reverse play reverse",
             scrub: true,
-            pin: true,
+            // pin: true,
           },
         }
       );

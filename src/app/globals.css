@@ -8,6 +8,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  /* overflow: hidden; */
 }
 .form-input input {
   @apply bg-transparent border-none outline-none border-b-2 border-white text-white;

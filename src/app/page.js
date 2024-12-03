@@ -22,6 +22,7 @@ export default function Home() {
         <MainHero />
         <WhySection />
         {/* <Why /> */}
+        <Stack />
         <OurProcess />
         <OurIndustries />
         <Test />
