@@ -28,7 +28,7 @@ const StackingImages = () => {
 
     timeln.from(".card-2", {
       xPercent: 80,
-      yPercent: 60,
+      yPercent: 200,
       rotate: -90,
       // opacity: 1,
     });
@@ -40,7 +40,7 @@ const StackingImages = () => {
         // scale: 0.98,
         xPercent: 80,
         rotate: 90,
-        yPercent: -100,
+        yPercent: -200,
         // opacity: 0.5,
         duration: 0.5,
       },
@@ -49,7 +49,7 @@ const StackingImages = () => {
 
     timeln.from(".card-3", {
       xPercent: 80,
-      yPercent: 60,
+      yPercent: 200,
       rotate: -90,
     });
     timeln.addLabel("card3");
@@ -60,7 +60,7 @@ const StackingImages = () => {
         // yPercent: 0,
         // opacity: 0.5,
         xPercent: 80,
-        yPercent: -100,
+        yPercent: -200,
         rotate: 90,
       },
       "-=0.5"
@@ -81,7 +81,7 @@ const StackingImages = () => {
 
     timeln.from(".card-4", {
       xPercent: 80,
-      yPercent: 60,
+      yPercent: 200,
       rotate: -90,
     });
     timeln.addLabel("card4");
@@ -89,7 +89,7 @@ const StackingImages = () => {
       ".card-3",
       {
         xPercent: 80,
-        yPercent: -100,
+        yPercent: -200,
         rotate: 90,
       },
       "-=0.5"
@@ -107,19 +107,15 @@ const StackingImages = () => {
 
     timeln.to(".card-4", {
       xPercent: 80,
-      yPercent: -100,
+      yPercent: -200,
       rotate: 90,
       // opacity: 1,
     });
   }, []);
 
   return (
-    <div className="container overflow-x-hidden mx-auto flex flex-col gap-10">
-      <div className="text-center ">
-        <h2 className="text-5xl font-bold text-white">Our Services</h2>
-      </div>
-
-      <div className="cards h-[50vh] md:h-[100vh] container mx-auto">
+    <div className="container  overflow-x-hidden mx-auto  gap-10">
+      <div className="cards h-[50vh] md:h-[100vh]  mx-auto">
         <div className="card card-1">
           <img
             src="/process/1.jpg"

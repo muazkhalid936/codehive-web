@@ -3,8 +3,8 @@
   /* width: 100%; */
   margin: auto;
   position: relative;
-  /* display: flex;
-  justify-content: end; */
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -14,7 +14,7 @@
   /* height: 100vh; */
   /* background: #f1f1f1; */
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   /* border-radius: 7px; */
   /* margin-bottom: 50px; */
