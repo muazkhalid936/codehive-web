@@ -111,11 +111,34 @@ const StackingImages = () => {
       rotate: 90,
       // opacity: 1,
     });
+
+    // Add a new timeline for text animation
+    let textTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".text-section",
+        start: "top top",
+        end: "+=2000",
+        scrub: 1,
+      },
+    });
+
+    textTimeline.from(".text-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+    });
   }, []);
 
   return (
-    <div className="container  overflow-x-hidden mx-auto  gap-10">
-      <div className="cards h-[50vh] md:h-[100vh]  mx-auto">
+    <div className="container overflow-x-hidden  mx-auto gap-10">
+      <div className="text-section text-black">
+        <h1>Your Title Here</h1>
+        <p>
+          Your descriptive text goes here. This will be animated in sync with
+          the cards.
+        </p>
+      </div>
+      <div className="cards h-[50vh] md:h-[100vh] mx-auto">
         <div className="card card-1">
           <img
             src="/process/1.jpg"

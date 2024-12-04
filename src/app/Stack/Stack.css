@@ -57,3 +57,8 @@
   left: translate(-50%, -50%);
   top: 90px;
 }
+.text-section {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust spacing as needed */
+  opacity: 0; /* Initial state for animation */
+}
