@@ -69,7 +69,7 @@ const Test = () => {
     <>
       <div
         ref={container2}
-        className="h-[100vh] flex items-center justify-center"
+        className="h-[100vh] overflow-x-hidden flex items-center justify-center"
       >
         <div className="relative w-72 h-[300px]">
           {cities.map((city) => {
