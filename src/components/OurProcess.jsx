@@ -1,6 +1,5 @@
 import React from "react";
 import { FaComments, FaDesktop, FaPen, FaMobileAlt } from "react-icons/fa";
-import { FiSettings } from "react-icons/fi";
 import { MdRocketLaunch } from "react-icons/md";
 
 const OurProcess = () => {

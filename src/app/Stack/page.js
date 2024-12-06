@@ -4,6 +4,7 @@ import "./Stack.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
+import { FaReact, FaNodeJs, FaPython, FaJava } from "react-icons/fa";
 
 const StackingImages = () => {
   useEffect(() => {
@@ -92,7 +93,7 @@ const StackingImages = () => {
     timeln.to(
       ".text-1",
       {
-        yPercent: -100,
+        yPercent: -20,
         opacity: 0,
         duration: 0.5,
       },
@@ -102,17 +103,17 @@ const StackingImages = () => {
     timeln.from(
       ".text-2",
       {
-        yPercent: 100,
+        yPercent: 20,
         opacity: 0,
         duration: 0.5,
       },
-      "card2-=0.5"
+      "card2-=0.3"
     );
 
     timeln.to(
       ".text-2",
       {
-        yPercent: -100,
+        yPercent: -20,
         opacity: 0,
         duration: 0.5,
       },
@@ -122,28 +123,17 @@ const StackingImages = () => {
     timeln.from(
       ".text-3",
       {
-        yPercent: 100,
+        yPercent: 20,
         opacity: 0,
         duration: 0.5,
       },
-      "card3-=0.5"
+      "card3-=0.3"
     );
 
     timeln.to(
       ".text-3",
       {
-        yPercent: -100,
-        opacity: 0,
-        duration: 0.5,
-      },
-      "card4-=0.5"
-    );
-
-
-    timeln.to(
-      ".text-1",
-      {
-        yPercent: -900,
+        yPercent: -20,
         opacity: 0,
         duration: 0.5,
       },
@@ -153,42 +143,55 @@ const StackingImages = () => {
     timeln.from(
       ".text-4",
       {
-        yPercent: 100,
+        yPercent: 20,
         opacity: 0,
         duration: 0.5,
       },
-      "card4-=0.5"
+      "card4-=0.3"
     );
+
+    // Icon animations
+    gsap.from(".icon", {
+      opacity: 0,
+      y: -50,
+      stagger: 0.2,
+      duration: 0.5,
+    });
   }, []);
 
   return (
     <div className="container overflow-x-hidden mx-auto gap-10">
       <div className="cards h-[50vh] items-center md:h-[100vh] mx-auto">
-        <div className="text-section text-xl  font-extrabold">
-          <div className="text text-1">
+        <div className="icon-container">
+          <FaReact className="icon" />
+          <FaNodeJs className="icon" />
+          <FaPython className="icon" />
+          <FaJava className="icon" />
+        </div>
+        <div className="text-section  w-40">
+          <div className="text flex flex-col gap-4 text-1">
+            <span className="text-3xl font-bold">Home Town</span>
             We provide bespoke software solutions powered by cutting-edge
             technologies like AI, blockchain, and cloud computing. Our team
-            ensures every application is scalable, secure, and tailored to your
-            specific needs. Whether it’s web or mobile, we transform your ideas
-            into reality.
+            ensures every application is scalable.
           </div>
-          <div className="text text-2">
-            Streamline your business operations with our advanced automation
-            services. Utilizing RPA and intelligent workflows, we reduce manual
-            tasks and optimize efficiency. Let technology handle the complexity
-            while you focus on growth.
+          <div className="text text-2 flex flex-col gap-4">
+            <span className="text-3xl font-bold">Home Town2</span>
+            We provide bespoke software solutions powered by cutting-edge
+            technologies like AI, blockchain, and cloud computing. Our team
+            ensures every application is scalable.
           </div>
-          <div className="text text-3">
-            Empower your business with data-driven insights through our
-            analytics solutions. From predictive modeling to real-time
-            dashboards, we help you make informed decisions. Unlock the power of
-            your data for actionable outcomes.
+          <div className="text text-3 flex flex-col gap-4">
+            <span className="text-3xl font-bold">Home Tow3</span>
+            We provide bespoke software solutions powered by cutting-edge
+            technologies like AI, blockchain, and cloud computing. Our team
+            ensures every application is scalable.
           </div>
-          <div className="text text-4">
-            Our team also specializes in seamless software integrations with
-            your existing systems. Whether integrating CRMs, ERPs, or
-            third-party tools, we ensure compatibility and performance.
-            Experience hassle-free upgrades without disrupting operations.
+          <div className="text text-4 flex flex-col gap-4">
+            <span className="text-3xl font-bold">Home Town4</span>
+            We provide bespoke software solutions powered by cutting-edge
+            technologies like AI, blockchain, and cloud computing. Our team
+            ensures every application is scalable.
           </div>
         </div>
 
