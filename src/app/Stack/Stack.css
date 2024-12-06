@@ -3,8 +3,8 @@
   /* width: 100%; */
   margin: auto;
   position: relative;
-  /* display: flex;
-  justify-content: end; */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -57,8 +57,19 @@
   left: translate(-50%, -50%);
   top: 90px;
 }
+/* Stack.css */
 .text-section {
-  text-align: center;
-  margin-bottom: 20px; /* Adjust spacing as needed */
-  opacity: 0; /* Initial state for animation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text {
+  position: absolute;
+  /* width: 100%; */
+  width: 50%;
+  left: -10px;
+  text-align: start;
 }
