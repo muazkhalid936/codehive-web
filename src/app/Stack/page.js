@@ -10,30 +10,33 @@ const StackingImages = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    let timeln = gsap.timeline({
+    let timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".cards",
         pin: true,
         pinSpacing: true,
         start: "top top",
         end: "+=2000",
-        scrub: 1,
+        scrub: 1, // Ensures animation progress is tied to scroll direction
+        toggleActions: "play reverse play reverse", // Ensures reverse action
       },
     });
 
-    timeln.addLabel("card1");
-    timeln.to(".card-1", {
+    timeline.addLabel("card1");
+
+    // Card Animations
+    timeline.to(".card-1", {
       yPercent: 0,
     });
 
-    timeln.from(".card-2", {
+    timeline.from(".card-2", {
       xPercent: 80,
       yPercent: 200,
       rotate: -90,
     });
-    timeln.addLabel("card2");
+    timeline.addLabel("card2");
 
-    timeln.to(
+    timeline.to(
       ".card-1",
       {
         xPercent: 80,
@@ -44,14 +47,14 @@ const StackingImages = () => {
       "-=0.5"
     );
 
-    timeln.from(".card-3", {
+    timeline.from(".card-3", {
       xPercent: 80,
       yPercent: 200,
       rotate: -90,
     });
-    timeln.addLabel("card3");
+    timeline.addLabel("card3");
 
-    timeln.to(
+    timeline.to(
       ".card-2",
       {
         xPercent: 80,
@@ -61,13 +64,14 @@ const StackingImages = () => {
       "-=0.5"
     );
 
-    timeln.from(".card-4", {
+    timeline.from(".card-4", {
       xPercent: 80,
       yPercent: 200,
       rotate: -90,
     });
-    timeln.addLabel("card4");
-    timeln.to(
+    timeline.addLabel("card4");
+
+    timeline.to(
       ".card-3",
       {
         xPercent: 80,
@@ -77,20 +81,79 @@ const StackingImages = () => {
       "-=0.5"
     );
 
-    // timeln.to(".card-4", {
-    //   xPercent: 80,
-    //   yPercent: -200,
-    //   rotate: 90,
-    // });
+    // Text animations with icon border effect
+    timeline.from(
+      ".text-1",
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.5,
+      },
+      "card1"
+    );
 
-    // Text animations
-    timeln.from(".text-1", {
-      yPercent: 0,
-      opacity: 1,
-      duration: 0.5,
-    });
+    timeline.to(
+      ".icon1",
+      {
+        backgroundColor: "black",
+        duration: 0.3,
+      },
+      "card1"
+    );
 
-    timeln.to(
+    timeline.to(
+      ".icon1",
+      { backgroundColor: "transparent", duration: 0.3 },
+      "card2-=0.5"
+    );
+
+    timeline.to(
+      ".icon2",
+      {
+        backgroundColor: "black",
+        duration: 0.3,
+      },
+      "card2-=0.5"
+    );
+    
+    timeline.to(
+      ".icon3",
+      {
+        backgroundColor: "black",
+        duration: 0.3,
+      },
+      "card3-=0.5"
+    );
+    
+    timeline.to(
+      ".icon4",
+      {
+        backgroundColor: "black",
+        duration: 0.3,
+      },
+      "card4-=0.5"
+    );
+
+    timeline.to(
+      ".icon3",
+      {
+        backgroundColor: "transparent",
+        duration: 0.3,
+      },
+      "card4-=0.5"
+    );
+
+    timeline.to(
+      ".icon2",
+      {
+        backgroundColor: "transparent",
+        duration: 0.3,
+      },
+      "card3-=0.5"
+    );
+
+
+    timeline.to(
       ".text-1",
       {
         yPercent: -20,
@@ -100,7 +163,7 @@ const StackingImages = () => {
       "card2-=0.5"
     );
 
-    timeln.from(
+    timeline.from(
       ".text-2",
       {
         yPercent: 20,
@@ -110,7 +173,7 @@ const StackingImages = () => {
       "card2-=0.3"
     );
 
-    timeln.to(
+    timeline.to(
       ".text-2",
       {
         yPercent: -20,
@@ -120,7 +183,7 @@ const StackingImages = () => {
       "card3-=0.5"
     );
 
-    timeln.from(
+    timeline.from(
       ".text-3",
       {
         yPercent: 20,
@@ -130,7 +193,7 @@ const StackingImages = () => {
       "card3-=0.3"
     );
 
-    timeln.to(
+    timeline.to(
       ".text-3",
       {
         yPercent: -20,
@@ -140,7 +203,7 @@ const StackingImages = () => {
       "card4-=0.5"
     );
 
-    timeln.from(
+    timeline.from(
       ".text-4",
       {
         yPercent: 20,
@@ -149,26 +212,18 @@ const StackingImages = () => {
       },
       "card4-=0.3"
     );
-
-    // Icon animations
-    gsap.from(".icon", {
-      opacity: 0,
-      y: -50,
-      stagger: 0.2,
-      duration: 0.5,
-    });
   }, []);
 
   return (
     <div className="container overflow-x-hidden mx-auto gap-10">
       <div className="cards h-[50vh] items-center md:h-[100vh] mx-auto">
         <div className="icon-container">
-          <FaReact className="icon" />
-          <FaNodeJs className="icon" />
-          <FaPython className="icon" />
-          <FaJava className="icon" />
+          <FaReact className="icon icon1 border-active" />
+          <FaNodeJs className="icon icon2" />
+          <FaPython className="icon icon3" />
+          <FaJava className="icon icon4" />
         </div>
-        <div className="text-section  w-40">
+        <div className="text-section w-40">
           <div className="text flex flex-col gap-4 text-1">
             <span className="text-3xl font-bold">Home Town</span>
             We provide bespoke software solutions powered by cutting-edge
@@ -182,7 +237,7 @@ const StackingImages = () => {
             ensures every application is scalable.
           </div>
           <div className="text text-3 flex flex-col gap-4">
-            <span className="text-3xl font-bold">Home Tow3</span>
+            <span className="text-3xl font-bold">Home Town3</span>
             We provide bespoke software solutions powered by cutting-edge
             technologies like AI, blockchain, and cloud computing. Our team
             ensures every application is scalable.

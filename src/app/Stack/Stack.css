@@ -63,6 +63,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20vh;
   height: 100%;
 }
 
@@ -80,19 +81,21 @@
   justify-content: center;
   gap: 20px;
   top: 30%;
-  color: blue;
+  left: -10px;
+  color: gray;
   margin-bottom: 20px;
 }
 
 .icon {
-  font-size: 2rem;
-  background-color: #f1f1f1;
-
-  transition: background-color 0.3s ease;
+  font-size: 5rem;
+  /* background-color: #f1f1f1; */
+  padding: 20px;
+  border-radius: 50%;
+  transition: background-color 0.5s ease;
 }
 
-.icon:hover {
-  background-color: #f1f1f1;
-  border-radius: 50%;
-  padding: 10px;
+.border-active {
+  /* border: 2px solid blue; Customize border style */
+  background-color: black;
+  border-radius: 50%; /* Make it circular if needed */
 }
