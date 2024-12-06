@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react"; 
+import { useState } from "react";
 import LoaderComponent from "../components/Loader";
 import OurProcess from "../components/OurProcess";
 import MainHero from "../components/MainHero";
@@ -9,12 +9,6 @@ import Stack from "../components/Stack";
 import Test from "../components/Test";
 import WhySection from "../components/WhySection";
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  const handleLoaderComplete = () => {
-    setLoading(false);
-  };
-
   return (
     <>
       <div className="bg-[#000B17]">
@@ -23,7 +17,7 @@ export default function Home() {
         {/* <Why /> */}
         <Stack />
         <OurProcess />
-        <OurIndustries />
+        {/* <OurIndustries /> */}
         <Test />
         <ContactForm />
       </div>

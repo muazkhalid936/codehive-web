@@ -57,3 +57,18 @@
   left: translate(-50%, -50%);
   top: 90px;
 }
+
+@media (max-width: 768px) {
+  .card-1{
+    top: 100px;
+  }
+  .card-2{
+    top: 350px;
+  }
+  .card-3{
+    top: 400px;
+  }
+  .card-4{
+    top: 550px;
+  }
+}

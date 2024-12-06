@@ -139,6 +139,17 @@ const StackingImages = () => {
       "card4-=0.5"
     );
 
+
+    timeln.to(
+      ".text-1",
+      {
+        yPercent: -900,
+        opacity: 0,
+        duration: 0.5,
+      },
+      "card4-=0.5"
+    );
+
     timeln.from(
       ".text-4",
       {

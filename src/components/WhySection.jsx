@@ -115,7 +115,7 @@ const WhySection = () => {
     //   ))}
     // </div>
     <>
-      <div ref={main}  className="container md:h-[600px] mb-20 font-extrabold  mx-auto flex flex-col justify-center items-center text-2xl md:text-5xl text-white md:space-y-16">
+      <div ref={main}  className="container h-screen mb-20 font-extrabold  mx-auto flex flex-col justify-center items-center text-2xl md:text-5xl text-white md:space-y-16">
         <h1 className="heading">Why you choose us?</h1>
         <h1 className="heading">Customer-Centric Approach</h1>
         <h1 className="heading">Unrivaled Experties</h1>
