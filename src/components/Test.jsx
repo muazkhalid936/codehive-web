@@ -34,21 +34,21 @@ const HorizontalScroll = () => {
       para: "Your description for Email App.",
       bgImg: "/Homapage/carosuel/Email.jpg",
     },
-    // {
-    //   head: "Faaolun",
-    //   para: "Your description for Faaolun.",
-    //   bgImg: "/Homapage/carosuel/faaolun.jpg",
-    // },
-    // {
-    //   head: "Fitverse",
-    //   para: "Your description for Fitverse.",
-    //   bgImg: "/Homapage/carosuel/fitverse.png",
-    // },
-    // {
-    //   head: "Food Inventory",
-    //   para: "Your description for Food Inventory.",
-    //   bgImg: "/Homapage/carosuel/food.jpg",
-    // },
+    {
+      head: "Faaolun",
+      para: "Your description for Faaolun.",
+      bgImg: "/Homapage/carosuel/faaolun.jpg",
+    },
+    {
+      head: "Fitverse",
+      para: "Your description for Fitverse.",
+      bgImg: "/Homapage/carosuel/fitverse.png",
+    },
+    {
+      head: "Food Inventory",
+      para: "Your description for Food Inventory.",
+      bgImg: "/Homapage/carosuel/food.jpg",
+    },
     // {
     //   head: "Instant Save",
     //   para: "Your description for Instant Save.",

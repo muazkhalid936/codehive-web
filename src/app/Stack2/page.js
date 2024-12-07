@@ -1,168 +1,117 @@
 "use client";
-import { useEffect } from "react";
-import "./Stack.css";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import MotionPathPlugin from "gsap/MotionPathPlugin";
 
-const StackingImages = () => {
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const ScrollAnimation = () => {
+  const containerRef = useRef();
+
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      smooth: true, // Enable smooth scrolling
+      lerp: 0.1, // Adjust for smoothness (lower = smoother, higher = snappier)
+    });
 
-    let timeln = gsap.timeline({
+    // Keep GSAP ScrollTrigger updated with Lenis scroll positions
+    function raf(time) {
+      lenis.raf(time); // Update Lenis
+      ScrollTrigger.update(); // Notify ScrollTrigger of scroll changes
+      requestAnimationFrame(raf); // Continue the animation frame
+    }
+    requestAnimationFrame(raf);
+
+    // GSAP animations
+    const sections = containerRef.current.querySelectorAll(".section");
+
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".cards",
-        pin: true,
-        pinSpacing: true,
+        trigger: containerRef.current,
         start: "top top",
-        end: "+=2000",
-        scrub: 1,
+        end: "+=300%",
+        scrub: true,
+        pin: true,
+        toggleActions: "play none none none",
       },
     });
 
-    timeln.addLabel("card1");
+    sections.forEach((section, index) => {
+      const heading = section.querySelector(".heading");
+      const image = section.querySelector(".image");
 
-    // Card 1 animation (start position to curve)
-    timeln.to(".card-1", {
-      motionPath: {
-        path: [
-          { x: 0, y: 0 },
-          { x: 200, y: -100 },
-          { x: 300, y: -200 },
-        ],
-      },
-      rotation: 90,
-      duration: 1,
+      // Ensure the first section is visible by default
+      if (index === 0) {
+        gsap.set(heading, { x: 0, opacity: 1 });
+        gsap.set(image, { x: 0, opacity: 1 });
+      }
+
+      // Animate out the previous elements
+      if (index > 0) {
+        tl.to(
+          sections[index - 1].querySelector(".heading"),
+          { x: -100, opacity: 0, duration: 0.5 },
+          index
+        ).to(
+          sections[index - 1].querySelector(".image"),
+          { x: 100, opacity: 0, duration: 0.5 },
+          index
+        );
+      }
+
+      // Animate in the current elements
+      tl.fromTo(
+        heading,
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.5 },
+        index + 0.5
+      ).fromTo(
+        image,
+        { x: 100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.5 },
+        index + 0.5
+      );
     });
 
-    timeln.addLabel("card2");
-
-    // Card 2 animation (curved entry)
-    timeln.from(".card-2", {
-      motionPath: {
-        path: [
-          { x: 200, y: 0 },
-          { x: 300, y: -100 },
-          { x: 400, y: -50 },
-        ],
-      },
-      rotate: -90,
-      duration: 1,
-    });
-
-    timeln.to(".card-1", {
-      motionPath: {
-        path: [
-          { x: 200, y: 0 },
-          { x: 300, y: -100 },
-          { x: 400, y: -200 },
-        ],
-      },
-      duration: 1,
-    });
-
-    timeln.addLabel("card3");
-
-    // Card 3 animation (entry with curve)
-    timeln.from(".card-3", {
-      motionPath: {
-        path: [
-          { x: 400, y: -50 },
-          { x: 500, y: -150 },
-          { x: 600, y: 0 },
-        ],
-      },
-      rotate: -90,
-      duration: 1,
-    });
-
-    timeln.to(".card-2", {
-      motionPath: {
-        path: [
-          { x: 400, y: -50 },
-          { x: 500, y: -150 },
-          { x: 600, y: -250 },
-        ],
-      },
-      duration: 1,
-    });
-
-    timeln.addLabel("card4");
-
-    // Card 4 animation (entry with curve)
-    timeln.from(".card-4", {
-      motionPath: {
-        path: [
-          { x: 600, y: 0 },
-          { x: 700, y: -100 },
-          { x: 800, y: -50 },
-        ],
-      },
-      rotate: -90,
-      duration: 1,
-    });
-
-    timeln.to(".card-3", {
-      motionPath: {
-        path: [
-          { x: 600, y: 0 },
-          { x: 700, y: -150 },
-          { x: 800, y: -250 },
-        ],
-      },
-      duration: 1,
-    });
-
-    timeln.to(".card-4", {
-      motionPath: {
-        path: [
-          { x: 800, y: -50 },
-          { x: 900, y: -150 },
-          { x: 1000, y: -250 },
-        ],
-      },
-      duration: 1,
-    });
+    // Cleanup on unmount
+    return () => {
+      lenis.destroy();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
-  return (
-    <div className="container overflow-x-hidden mx-auto flex flex-col gap-10">
-      <div className="text-center ">
-        <h2 className="text-5xl font-bold text-white">Our Services</h2>
-      </div>
+  const headings = ["Heading One", "Heading Two", "Heading Three"];
+  const images = ["/Industry/H.png", "/Industry/E.png", "/Industry/H.png"];
 
-      <div className="cards h-[50vh] md:h-[100vh] container mx-auto">
-        <div className="card card-1">
-          <img
-            src="/process/1.jpg"
-            className="rounded-3xl h-[300px] w-[400px]"
-            alt="1"
-          />
+  return (
+    <div
+      ref={containerRef}
+      className="flex flex-col items-center justify-center h-screen bg-gray-100 overflow-hidden"
+    >
+      {headings.map((heading, index) => (
+        <div
+          key={index}
+          className={`section absolute flex items-center justify-between gap-8 w-full px-16 ${
+            index === 0 ? "z-10" : ""
+          }`}
+        >
+          {/* Left Section */}
+          <div className="w-1/2 heading text-3xl font-bold">{heading}</div>
+          {/* Right Section */}
+          <div className="w-1/2">
+            <img
+              src={images[index]}
+              alt={`Image ${index + 1}`}
+              className="image w-1/3 h-[60vh] mx-auto rounded-lg shadow-lg"
+            />
+          </div>
         </div>
-        <div className="card card-2">
-          <img
-            src="/process/bg.jpg"
-            className="rounded-3xl h-[300px] w-[400px]"
-            alt="1"
-          />
-        </div>
-        <div className="card card-3">
-          <img
-            src="/process/1.jpg"
-            className="rounded-3xl h-[300px] w-[400px]"
-            alt="1"
-          />
-        </div>
-        <div className="card card-4">
-          <img
-            src="/process/bg.jpg"
-            className="rounded-3xl h-[300px] w-[400px]"
-            alt="1"
-          />
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
 
-export default StackingImages;
+export default ScrollAnimation;
