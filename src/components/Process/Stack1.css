@@ -1,0 +1,104 @@
+.new-cards {
+  /* height: 600px; */
+  /* width: 100%; */
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-card {
+  position: absolute;
+  width: 80%;
+  height: 100vh;
+  /* background: #f1f1f1; */
+  display: flex;
+  left: 50%;
+  justify-content: start;
+  align-items: center;
+  /* border-radius: 7px; */
+  /* margin-bottom: 50px; */
+}
+
+
+
+.new-card img {
+  /* width: 100%; */
+  /* height: 100%; */
+  border-radius: 20px;
+  /* object-fit: cover; */
+}
+
+.new-card-1 {
+  top: 50px;
+  /* left: ; */
+  left: translate(-50%, -50%);
+  /* top: 50%; */
+}
+
+.new-card-2 {
+  /* left: 35px; */
+  left: 0;
+  top: 60px;
+}
+
+.new-card-3 {
+  /* left: 70px; */
+  left: translate(-50%, -50%);
+  top: 70px;
+}
+
+.new-card-4 {
+  /* left: 105px; */
+  left: translate(-50%, -50%);
+  top: 80px;
+}
+
+.new-card-5 {
+  /* left: 140px; */
+  left: translate(-50%, -50%);
+  top: 90px;
+}
+/* Stack.css */
+.new-text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  height: 100%;
+}
+
+.new-text {
+  position: absolute;
+  /* width: 100%; */
+  width: 30%;
+  left: -10px;
+  text-align: start;
+}
+
+.new-icon-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  top: 30%;
+  left: -10px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.new-icon {
+  font-size: 5rem;
+  /* background-color: #f1f1f1; */
+  padding: 20px;
+  border-radius: 50%;
+  transition: background-color 0.5s ease;
+}
+
+.new-border-active {
+  /* border: 2px solid blue; Customize border style */
+  background-color: black;
+  border-radius: 50%; /* Make it circular if needed */
+}

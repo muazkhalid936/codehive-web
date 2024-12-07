@@ -30,8 +30,8 @@ const StackingImages = () => {
     });
 
     timeline.from(".new-card-2", {
-      xPercent: 40,
-      yPercent: 50,
+      xPercent: 80,
+      yPercent: 200,
       rotate: -90,
     });
     timeline.addLabel("new-card2");
@@ -39,17 +39,17 @@ const StackingImages = () => {
     timeline.to(
       ".new-card-1",
       {
-        xPercent: 40,
+        xPercent: 80,
         rotate: 90,
-        yPercent: -50,
+        yPercent: -200,
         duration: 0.5,
       },
-      ".new-card-2-=0.4"
+      "-=0.5"
     );
 
     timeline.from(".new-card-3", {
-      xPercent: 40,
-      yPercent: 50,
+      xPercent: 80,
+      yPercent: 200,
       rotate: -90,
     });
     timeline.addLabel("new-card3");
@@ -57,16 +57,16 @@ const StackingImages = () => {
     timeline.to(
       ".new-card-2",
       {
-        xPercent: 40,
-        yPercent: -50,
+        xPercent: 80,
+        yPercent: -200,
         rotate: 90,
       },
-      ".new-card-3-=0.4"
+      "-=0.5"
     );
 
     timeline.from(".new-card-4", {
-      xPercent: 40,
-      yPercent: 50,
+      xPercent: 80,
+      yPercent: 200,
       rotate: -90,
     });
     timeline.addLabel("new-card4");
@@ -74,11 +74,11 @@ const StackingImages = () => {
     timeline.to(
       ".new-card-3",
       {
-        xPercent: 40,
-        yPercent: -50,
+        xPercent: 80,
+        yPercent: -200,
         rotate: 90,
       },
-      ".new-card-4-=0.5"
+      "-=0.5"
     );
 
     // Text animations with icon border effect
@@ -115,7 +115,7 @@ const StackingImages = () => {
       },
       "new-card2-=0.5"
     );
-
+    
     timeline.to(
       ".new-icon3",
       {
@@ -124,7 +124,7 @@ const StackingImages = () => {
       },
       "new-card3-=0.5"
     );
-
+    
     timeline.to(
       ".new-icon4",
       {
@@ -151,6 +151,7 @@ const StackingImages = () => {
       },
       "new-card3-=0.5"
     );
+
 
     timeline.to(
       ".new-text-1",
@@ -214,9 +215,7 @@ const StackingImages = () => {
   }, []);
 
   return (
-   <div className="bg-[#000B17]">
-     <div className="container bg-[#000B17] overflow-x-hidden mx-auto gap-10">
-      <div className="flex-1 text-center text-white text-5xl font-bold ">Our Process</div>
+    <div className="container bg-[#000B17] overflow-x-hidden mx-auto gap-10">
       <div className="new-cards h-[50vh] items-center md:h-[100vh] mx-auto">
         <div className="new-icon-container">
           <FaReact className="new-icon new-icon1 new-border-active" />
@@ -283,7 +282,6 @@ const StackingImages = () => {
         </div>
       </div>
     </div>
-   </div>
   );
 };
 

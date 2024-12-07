@@ -5,7 +5,8 @@ import ContactForm from "../components/Contact";
 import Stack from "../components/Stack";
 import Test from "../components/Test";
 import WhySection from "../components/WhySection";
-import OurIndustries from '../components/OurIndustries'
+import OurIndustries from "../components/OurIndustries";
+import Process from "../components/Process/page";
 export default function Home() {
   return (
     <>
@@ -13,7 +14,11 @@ export default function Home() {
         <MainHero />
         <WhySection />
         <Stack />
-        <OurProcess />
+        {/* <div className="container">
+          <Process />
+        </div> */}
+        {/* <OurProcess /> */}
+        {/* <Indus /> */}
         <OurIndustries />
         <Test />
         <ContactForm />
