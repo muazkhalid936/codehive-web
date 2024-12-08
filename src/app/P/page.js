@@ -16,16 +16,16 @@ const ScrollAnimation = () => {
       smooth: true,
       lerp: 0.1,
     });
-  
+
     function raf(time) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-  
+
     const sections = containerRef.current.querySelectorAll(".section");
-  
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -36,91 +36,68 @@ const ScrollAnimation = () => {
         toggleActions: "play none none none",
       },
     });
-  
+
     sections.forEach((section, index) => {
       const heading = section.querySelector(".heading");
-      const image = section.querySelector(".image");
-  
+      const images = section.querySelectorAll(".image");
+
       if (index > 0) {
         // Animate outgoing elements of the previous section
         tl.to(
           sections[index - 1].querySelector(".heading"),
-          { x: -50, opacity: 0, duration: 0.5 },
+          { opacity: 0, duration: 0.5 },
           index
         ).to(
-          sections[index - 1].querySelector(".image"),
-          { x: 0, opacity: 0, duration: 0.5 },
+          sections[index - 1].querySelector(".image-1"),
+          { opacity: 0, duration: 0.5 },
+          index
+        ).to(
+          sections[index - 1].querySelector(".image-2"),
+          { opacity: 1, duration: 0.5 },
           index
         );
-  
+
         // Animate incoming elements of the current section
         tl.fromTo(
           heading,
           { x: -50, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.5 },
           index + 0.5
-        ).fromTo(
-          image,
-          { x: 0, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.5 },
-          index + 0.5
         );
       } else {
         // Ensure the first section is visible by default
         gsap.set(heading, { x: 0, opacity: 1 });
-        gsap.set(image, { x: 0, opacity: 1 });
+        gsap.set(images[0], { opacity: 1 }); // First image visible
+        gsap.set(images[1], { opacity: 0 }); // Second image hidden
       }
     });
-  
+
     return () => {
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
-  
 
   const data = [
     {
       title: "Car Wash",
       description:
         "Transform your vehicle with our state-of-the-art car wash services, offering eco-friendly solutions that deliver a spotless shine. From advanced cleaning techniques to water conservation practices, we ensure your car looks as good as new every time.",
-      image: "/Industry/1.png", // Replace with actual image URL
+      images: ["/Industry/H.png", "/Industry/E.png"], // Two images for each section
     },
     {
       title: "Delivery",
       description:
         "Experience seamless logistics with our reliable delivery services, designed to meet your personal and business needs. From same-day delivery to meticulous handling, we ensure your packages arrive safely and on time, every time.",
-      image: "/Industry/2.png", // Replace with actual image URL
+      images: ["/Industry/E.png", "/Industry/H.png"], // Two images for each section
     },
-    {
-      title: "Health Care",
-      description:
-        "Discover innovative healthcare solutions that prioritize your well-being. Our comprehensive services span advanced diagnostics, preventive care, and personalized treatment plans, empowering you to lead a healthier and happier life.",
-      image: "/Industry/3.png", // Replace with actual image URL
-    },
-    {
-      title: "Booking",
-      description:
-        "Streamline your reservations with our intuitive booking platform, crafted to offer maximum convenience. Whether it's travel, events, or appointments, enjoy an effortless booking experience with just a few clicks.",
-      image: "/Industry/4.png", // Replace with actual image URL
-    },
-    {
-      title: "Ecommerce",
-      description:
-        "Elevate your shopping experience with our modern e-commerce platforms, designed to deliver speed, security, and style. From tailored storefronts to seamless checkout, we redefine online retail to meet your business goals.",
-      image: "/Industry/5.png", // Replace with actual image URL
-    },
-    {
-      title: "Fitness",
-      description:
-        "Achieve your health goals with our cutting-edge fitness solutions. From virtual workout plans to personalized coaching, we bring innovation and accessibility to help you lead an active, balanced lifestyle.",
-      image: "/Industry/6.png", // Replace with actual image URL
-    },
+    // Add more sections as needed
   ];
+
   return (
     <div
       ref={containerRef}
-      className="flex flex-col items-center justify-center h-screen main22  overflow-hidden"
+      className="flex flex-col items-center justify-center h-screen main22 overflow-hidden"
     >
       {data.map((item, index) => (
         <div
@@ -131,12 +108,17 @@ const ScrollAnimation = () => {
             <h2 className="text-4xl font-bold text-blue-400">{item.title}</h2>
             <p className="mt-4 text-lg text-gray-300">{item.description}</p>
           </div>
-          {/* Right Section: Image */}
-          <div className="w-1/2">
+          {/* Right Section: Two Images */}
+          <div className="w-1/2 flex justify-between">
             <img
-              src={item.image}
-              alt={`${item.title} image`}
-              className="image w-1/3 h-[60vh] mx-auto rounded-lg shadow-lg"
+              src={item.images[0]}
+              alt={`${item.title} image 1`}
+              className="image image-1 w-1/3 h-[60vh] mx-auto rounded-lg shadow-lg"
+            />
+            <img
+              src={item.images[1]}
+              alt={`${item.title} image 2`}
+              className="image image-2 w-1/3 h-[60vh] mx-auto rounded-lg shadow-lg"
             />
           </div>
         </div>

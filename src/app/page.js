@@ -19,6 +19,12 @@ export default function Home() {
         </div> */}
         {/* <OurProcess /> */}
         {/* <Indus /> */}
+
+        <div className="container">
+          <div className="flex flex-1 h-[50vh] justify-center items-center mx-auto text-5xl text-white font-bold">
+            Our Industry
+          </div>
+        </div>
         <OurIndustries />
         <Test />
         <ContactForm />

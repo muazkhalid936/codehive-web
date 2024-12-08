@@ -13,6 +13,7 @@
   /* width: 80%; */
   /* height: 100vh; */
   /* background: #f1f1f1; */
+  /* top: -50px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,19 +38,19 @@
 .card-2 {
   /* left: 35px; */
   left: translate(-50%, -50%);
-  top: 60px;
+  top: 70px;
 }
 
 .card-3 {
   /* left: 70px; */
   left: translate(-50%, -50%);
-  top: 70px;
+  top: 90px;
 }
 
 .card-4 {
   /* left: 105px; */
   left: translate(-50%, -50%);
-  top: 80px;
+  top: 110px;
 }
 
 .card-5 {
