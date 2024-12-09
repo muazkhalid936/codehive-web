@@ -60,13 +60,15 @@ const ScrollAnimation = () => {
       gsap.set(images[0], { opacity: 1 });
 
       // Animate section opacity
-      gsap.set(section, { opacity: 0 }); // Set initial opacity to 0
-      gsap.set(".h11", {
-        x: 400,
-      });
-      gsap.set(".h22", {
-        x: 400,
-      });
+      gsap.set(section, { opacity: 1 }); // Set initial opacity to 0
+      // gsap.set(".h11", {
+      //   x: 400,
+      // });
+      // gsap.set(".h22", {
+      //   x: 400,
+      // });
+      // gsap.set(".h11", {opacity:1, x: 0},".h11-=0.1");
+
       gsap.to(section, {
         opacity: 1,
         x: 0,
@@ -78,17 +80,22 @@ const ScrollAnimation = () => {
           markers: false, // Optional: to see the start and end points of the scroll trigger
         },
       });
-      gsap.to(".h11", {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: section,
-          start: "top top", // Trigger when the top of the section comes 80% into the viewport
-          end: "bottom top",
-          scrub: true,
-          markers: false, // Optional: to see the start and end points of the scroll trigger
+      gsap.to(
+        ".h11",
+        {
+          opacity: 1,
+          x: 20,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: section,
+            start: "top top", // Trigger when the top of the section comes 80% into the viewport
+            end: "bottom top",
+            scrub: true,
+            markers: false, // Optional: to see the start and end points of the scroll trigger
+          },
         },
-      });
+        ".h22-=0.5"
+      );
       gsap.to(".h22", {
         opacity: 1,
         x: 0,
