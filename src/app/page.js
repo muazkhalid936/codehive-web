@@ -17,7 +17,7 @@ export default function Home() {
         {/* <div className="container">
           <Process />
         </div> */}
-        {/* <OurProcess /> */}
+        <OurProcess />
         {/* <Indus /> */}
 
         <div className="container">

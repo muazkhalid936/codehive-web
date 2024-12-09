@@ -31,7 +31,7 @@ const StackingImages = () => {
 
     timeline.from(".new-card-2", {
       xPercent: 40,
-      yPercent: 50,
+      yPercent: 40,
       rotate: -90,
     });
     timeline.addLabel("new-card2");
@@ -41,7 +41,7 @@ const StackingImages = () => {
       {
         xPercent: 40,
         rotate: 90,
-        yPercent: -50,
+        yPercent: -40,
         duration: 0.5,
       },
       ".new-card-2-=0.4"
@@ -49,7 +49,7 @@ const StackingImages = () => {
 
     timeline.from(".new-card-3", {
       xPercent: 40,
-      yPercent: 50,
+      yPercent: 40,
       rotate: -90,
     });
     timeline.addLabel("new-card3");
@@ -58,7 +58,7 @@ const StackingImages = () => {
       ".new-card-2",
       {
         xPercent: 40,
-        yPercent: -50,
+        yPercent: -40,
         rotate: 90,
       },
       ".new-card-3-=0.4"
@@ -66,7 +66,7 @@ const StackingImages = () => {
 
     timeline.from(".new-card-4", {
       xPercent: 40,
-      yPercent: 50,
+      yPercent: 40,
       rotate: -90,
     });
     timeline.addLabel("new-card4");
@@ -75,7 +75,7 @@ const StackingImages = () => {
       ".new-card-3",
       {
         xPercent: 40,
-        yPercent: -50,
+        yPercent: -40,
         rotate: 90,
       },
       ".new-card-4-=0.5"
