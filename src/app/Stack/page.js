@@ -214,76 +214,78 @@ const StackingImages = () => {
   }, []);
 
   return (
-   <div className="bg-[#000B17]">
-     <div className="container bg-[#000B17] overflow-x-hidden mx-auto gap-10">
-      <div className="flex-1 text-center text-white text-5xl font-bold ">Our Process</div>
-      <div className="new-cards h-[50vh] items-center md:h-[100vh] mx-auto">
-        <div className="new-icon-container">
-          <FaReact className="new-icon new-icon1 new-border-active" />
-          <FaNodeJs className="new-icon new-icon2" />
-          <FaPython className="new-icon new-icon3" />
-          <FaJava className="new-icon new-icon4" />
+    <div className="bg-[#000B17]">
+      <div className="container bg-[#000B17] overflow-x-hidden mx-auto gap-10">
+        <div className="flex-1 text-center text-white text-5xl font-bold ">
+          Our Process
         </div>
-        <div className="new-text-section text-white w-40">
-          <div className="new-text flex flex-col gap-4 new-text-1">
-            <span className="text-3xl font-bold">Home Town</span>
-            We provide bespoke software solutions powered by cutting-edge
-            technologies like AI, blockchain, and cloud computing. Our team
-            ensures every application is scalable.
+        <div className="new-cards h-[50vh] items-center md:h-[100vh] mx-auto">
+          <div className="new-icon-container">
+            <FaReact className="new-icon new-icon1 new-border-active" />
+            <FaNodeJs className="new-icon new-icon2" />
+            <FaPython className="new-icon new-icon3" />
+            <FaJava className="new-icon new-icon4" />
           </div>
-          <div className="new-text new-text-2 flex flex-col gap-4">
-            <span className="text-3xl font-bold">Home Town2</span>
-            We provide bespoke software solutions powered by cutting-edge
-            technologies like AI, blockchain, and cloud computing. Our team
-            ensures every application is scalable.
+          <div className="new-text-section text-white w-40">
+            <div className="new-text flex flex-col gap-4 new-text-1">
+              <span className="text-3xl font-bold">Home Town</span>
+              We provide bespoke software solutions powered by cutting-edge
+              technologies like AI, blockchain, and cloud computing. Our team
+              ensures every application is scalable.
+            </div>
+            <div className="new-text new-text-2 flex flex-col gap-4">
+              <span className="text-3xl font-bold">Home Town2</span>
+              We provide bespoke software solutions powered by cutting-edge
+              technologies like AI, blockchain, and cloud computing. Our team
+              ensures every application is scalable.
+            </div>
+            <div className="new-text new-text-3 flex flex-col gap-4">
+              <span className="text-3xl font-bold">Home Town3</span>
+              We provide bespoke software solutions powered by cutting-edge
+              technologies like AI, blockchain, and cloud computing. Our team
+              ensures every application is scalable.
+            </div>
+            <div className="new-text new-text-4 flex flex-col gap-4">
+              <span className="text-3xl font-bold">Home Town4</span>
+              We provide bespoke software solutions powered by cutting-edge
+              technologies like AI, blockchain, and cloud computing. Our team
+              ensures every application is scalable.
+            </div>
           </div>
-          <div className="new-text new-text-3 flex flex-col gap-4">
-            <span className="text-3xl font-bold">Home Town3</span>
-            We provide bespoke software solutions powered by cutting-edge
-            technologies like AI, blockchain, and cloud computing. Our team
-            ensures every application is scalable.
-          </div>
-          <div className="new-text new-text-4 flex flex-col gap-4">
-            <span className="text-3xl font-bold">Home Town4</span>
-            We provide bespoke software solutions powered by cutting-edge
-            technologies like AI, blockchain, and cloud computing. Our team
-            ensures every application is scalable.
-          </div>
-        </div>
 
-        <div>
-          <div className="new-card new-card-1">
-            <img
-              src="/process/1.jpg"
-              className="rounded-3xl h-[300px] w-[400px]"
-              alt="1"
-            />
-          </div>
-          <div className="new-card new-card-2">
-            <img
-              src="/process/bg.jpg"
-              className="rounded-3xl h-[300px] w-[400px]"
-              alt="1"
-            />
-          </div>
-          <div className="new-card new-card-3">
-            <img
-              src="/process/1.jpg"
-              className="rounded-3xl h-[300px] w-[400px]"
-              alt="1"
-            />
-          </div>
-          <div className="new-card new-card-4">
-            <img
-              src="/process/bg.jpg"
-              className="rounded-3xl h-[300px] w-[400px]"
-              alt="1"
-            />
+          <div>
+            <div className="new-card new-card-1">
+              <img
+                src="/process/1.jpg"
+                className="rounded-3xl h-[300px] w-[400px]"
+                alt="1"
+              />
+            </div>
+            <div className="new-card new-card-2">
+              <img
+                src="/process/bg.jpg"
+                className="rounded-3xl h-[300px] w-[400px]"
+                alt="1"
+              />
+            </div>
+            <div className="new-card new-card-3">
+              <img
+                src="/process/1.jpg"
+                className="rounded-3xl h-[300px] w-[400px]"
+                alt="1"
+              />
+            </div>
+            <div className="new-card new-card-4">
+              <img
+                src="/process/bg.jpg"
+                className="rounded-3xl h-[300px] w-[400px]"
+                alt="1"
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
-   </div>
   );
 };
 

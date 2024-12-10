@@ -216,9 +216,6 @@ const StackingImages = () => {
   return (
     <div className="bg-[#000B17]">
       <div className="container bg-[#000B17] overflow-x-hidden mx-auto gap-10">
-        <div className="flex-1 text-center text-white text-5xl font-bold ">
-          Our Process
-        </div>
         <div className="new-cards h-[50vh] items-center md:h-[100vh] mx-auto">
           <div className="new-icon-container">
             <FaReact className="new-icon new-icon1 new-border-active" />

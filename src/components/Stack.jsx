@@ -94,9 +94,9 @@ const StackingImages = () => {
 
   return (
     <div className="container  mx-auto flex flex-col gap-10">
-      <div className="text-center ">
+      {/* <div className="text-center ">
         <h2 className="text-5xl font-bold text-white">Our Services</h2>
-      </div>
+      </div> */}
 
       <div className="cards h-[50vh] md:h-[100vh] container mx-auto">
         <div className="card card-1">
