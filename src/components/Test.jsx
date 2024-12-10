@@ -119,11 +119,6 @@ const HorizontalScroll = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="text-center">
-        <h1 className="text-2xl md:text-5xl font-bold text-white">
-          Our Recent Work
-        </h1>
-      </div>
       <div
         ref={containerRef}
         className=""

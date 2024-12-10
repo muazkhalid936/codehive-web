@@ -17,28 +17,24 @@ const Page = () => {
       const text = new SplitType(element, { types: "chars" });
 
       const chars = text.chars; // Get all characters after splitting
-      gsap.set(chars, { opacity: 0 }); // Set initial opacity to low for all characters
+      gsap.set(chars, { opacity: 0 }); // Initially set all characters to invisible
 
       ScrollTrigger.create({
         trigger: element,
-        start: "top center",
-        end: "top 10%",
+        start: "top top",
+        end: "bottom center",
         scrub: true,
         onUpdate: (self) => {
-          // Calculate active character range based on scroll progress
-          const activeIndex = Math.floor(self.progress * chars.length);
+          const progress = self.progress; // Scroll progress (0 to 1)
+          const activeIndex = Math.floor(progress * chars.length);
+
           chars.forEach((char, i) => {
-            if (i >= activeIndex && i < activeIndex + 4) {
-              // Fully visible characters
-              gsap.set(char, { opacity: 1 });
-            } else if (i >= activeIndex - 2 && i < activeIndex + 6) {
-              // Partially visible characters before and after
-              const distance = Math.abs(i - activeIndex - 2); // Distance from active range
-              const reducedOpacity = 0.2 + (1 - distance * 0.2); // Scale opacity smoothly
-              gsap.set(char, { opacity: Math.max(0.2, reducedOpacity) });
+            if (i <= activeIndex) {
+              // Reveal characters based on scroll progress
+              gsap.to(char, { opacity: 1, duration: 0.2, ease: "power1.out" });
             } else {
-              // Invisible characters
-              gsap.set(char, { opacity: 0 });
+              // Keep characters invisible if not in the active range
+              gsap.to(char, { opacity: 0, duration: 0.2, ease: "power1.out" });
             }
           });
         },
@@ -60,9 +56,9 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="container mx-auto flex h-screen  bg-[#000B17] justify-center items-center">
-      <h1 className="text-white text-5xl  font-bold reveal-type">
-        Our Process{" "}
+    <div className="container mx-auto flex h-screen bg-[#000B17] justify-center items-center">
+      <h1 className="text-white text-5xl font-bold reveal-type">
+        Why You Choose Us?
       </h1>
     </div>
   );

@@ -16,24 +16,33 @@ const Page = () => {
     splitTypes.forEach((element) => {
       const text = new SplitType(element, { types: "chars" });
 
-      // Scroll-linked animation
-      gsap.fromTo(
-        text.chars,
-        { opacity: 0, scale: 0.5 }, // Starting state: faded and slightly down
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.05,
-          scale: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 90%", // Animation starts when top of element hits 90% of viewport
-            end: "top 10%", // Animation completes when top of element hits 10% of viewport
-            scrub: true, // Smooth link between scroll and animation
-          },
-        }
-      );
+      const chars = text.chars; // Get all characters after splitting
+      gsap.set(chars, { opacity: 0 }); // Set initial opacity to low for all characters
+
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top center",
+        end: "top 10%",
+        scrub: true,
+        onUpdate: (self) => {
+          // Calculate active character range based on scroll progress
+          const activeIndex = Math.floor(self.progress * chars.length);
+          chars.forEach((char, i) => {
+            if (i >= activeIndex && i < activeIndex + 4) {
+              // Fully visible characters
+              gsap.set(char, { opacity: 1 });
+            } else if (i >= activeIndex - 2 && i < activeIndex + 6) {
+              // Partially visible characters before and after
+              const distance = Math.abs(i - activeIndex - 2); // Distance from active range
+              const reducedOpacity = 0.2 + (1 - distance * 0.2); // Scale opacity smoothly
+              gsap.set(char, { opacity: Math.max(0.2, reducedOpacity) });
+            } else {
+              // Invisible characters
+              gsap.set(char, { opacity: 0 });
+            }
+          });
+        },
+      });
     });
 
     // Handle Lenis scroll
@@ -54,10 +63,10 @@ const Page = () => {
     <div className="container mx-auto flex flex-col bg-[#000B17] justify-center items-center">
       <h1 className="h-screen">a</h1>
       <h1 className="text-white flex justify-center items-center h-screen text-5xl font-bold reveal-type">
-        Define Your Goal
+        Define Your Goal and Achieve Your Dreams
       </h1>
       <h1 className="text-white text-5xl h-screen font-bold reveal-type">
-        Define Your Path
+        Define Your Path Towards Success
       </h1>
     </div>
   );

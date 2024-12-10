@@ -7,31 +7,31 @@ gsap.registerPlugin(ScrollTrigger);
 const WhySection = () => {
   useEffect(() => {
     // Array of headings
-    const headings = [".h1", ".h2", ".h3", ".h4"];
+    const headings = [".h2", ".h3", ".h4"];
 
     // Loop through each heading to apply the scroll animation
     headings.forEach((heading) => {
       gsap.to(heading, {
-        duration: 1,
+        opacity: 0, // Fade out to 0
+        // duration: 1,
+        // y: -10, // Move upward while fading out
+        scale: 0.8, // Shrink while fading out
         scrollTrigger: {
           trigger: heading,
-          pin: true,
-          start: "top 70%", // Start fading when the heading's top is 80% down the screen
-          end: "center center", // Fully faded when the heading reaches the center
-          scrub: true, // Smooth fade effect during scroll
+          start: "top 60%", // Start animation when heading is near the middle of the viewport
+          end: "center center", // Finish animation earlier for a smooth transition
+          scrub: 1, // Smooth scrub effect over scroll
         },
-        opacity: 0, // Fade out to 0
-        y: -100, // Move upward while fading out
-        duration: 1,
-        scale:0.5 // Duration of the animation
       });
     });
   }, []);
 
   return (
-    <div className="container h-screen mb-20 font-extrabold mx-auto flex flex-col justify-center items-center text-2xl md:text-5xl text-white gap-10 md:gap-20  md:space-y-20">
-      {/* <h1 className="heading h1 ease-in-out">Why you choose us?</h1> */}
+    <div className="container relative h-screen mb-20 font-extrabold mx-auto flex flex-col justify-center items-center text-2xl md:text-6xl text-white gap-20 ">
+      <img src="/Why/1.png" className=" scale-90" />
+
       <h1 className="heading h2">Customer-Centric Approach</h1>
+
       <h1 className="heading h3">Unrivaled Expertise</h1>
       <h1 className="heading h4">End-to-End Support</h1>
     </div>
