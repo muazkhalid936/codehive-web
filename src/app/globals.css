@@ -1,20 +1,44 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy Black"), local("Gilroy-Black"),
+    url("./fonts/Gilroy-Black.woff2") format("woff2"),
+    url("./fonts/Gilroy-Black.woff") format("woff"),
+    url("./fonts/Gilroy-Black.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato Regular"), local("Lato-Regular"),
+    url("./fonts/Lato-Regular/Lato-Regular.woff2") format("woff2"),
+    url("./fonts/Lato-Regular/Lato-Regular.woff") format("woff"),
+    url("./fonts/Lato-Regular/Lato-Regular.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   /* overflow: hidden; */
+}
+
+.header {
+  font-family: "Gilroy", sans-serif !important;
 }
 .form-input input {
   @apply bg-transparent border-none outline-none border-b-2 border-white text-white;
 }
 
-.container {
+/* .container {
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
@@ -60,7 +84,7 @@
   .container {
     max-width: 1600px;
   }
-}
+} */
 
 .content_title::before {
   font-weight: 400;
@@ -70,8 +94,7 @@
   text-align: center;
 }
 
-
-@layer components{
+@layer components {
   .card {
     @apply absolute top-0 left-0 w-full h-full;
   }
@@ -80,4 +103,3 @@
 ::-webkit-scrollbar {
   display: none;
 }
-

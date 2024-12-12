@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { FiArrowUpRight, FiMenu } from "react-icons/fi";
+import { FaChevronDown } from "react-icons/fa";
+
 import Link from "next/link";
 
 const Navbar = () => {
@@ -20,19 +22,27 @@ const Navbar = () => {
             alt="logo"
           />
         </div>
-        <div className=" hidden lg:flex gap-4 text-sm">
+        <div className=" hidden lg:flex gap-4 text-sm lg:text-base  xl:text-xl lg:gap-3 xl:gap-5">
           <Link href="/">Home</Link>
           <Link href="/">About Us</Link>
-          <Link href="/">Services</Link>
-          <Link href="/">Products</Link>
-          <Link href="/">Industries</Link>
+          <Link className="flex  justify-center gap-1 items-center" href="/">
+            Services <FaChevronDown className="text-blue-600 text-base" />{" "}
+          </Link>
+          <Link className="flex  justify-center gap-1 items-center" href="/">
+            Products
+            <FaChevronDown className="text-blue-600 text-base" />
+          </Link>
+          <Link className="flex  justify-center gap-1 items-center" href="/">
+            Industries
+            <FaChevronDown className="text-blue-600  text-xs lg:text-base" />
+          </Link>
           <Link href="/">Portfolio</Link>
         </div>
 
-        <div className="hidden lg:flex text-sm items-center gap-2">
+        <div className="hidden lg:flex text-sm lg:text-base xl:text-xl items-center gap-2">
           <button className=" ">Contact Us</button>
           <div className=" bg-white text-black rounded-full ">
-            <FiArrowUpRight className="w-4 h-4" />
+            <FiArrowUpRight className="w-5 h-5" />
           </div>
         </div>
 

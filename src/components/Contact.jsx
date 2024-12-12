@@ -2,12 +2,12 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <div className="bg-[#000b17] container  py-20 ">
-      <div className="p-4 md:p-8 rounded-2xl bg-gradient-to-b  relative from-[#0a1929]   to-[#020d1a] w-[90%] md:w-[70%]  mx-auto shadow-lg">
+    <div className="bg-[#000b17] flex justify-center items-center mx-auto container h-screen  py-20 ">
+      <div className="p-4 md:p-8 rounded-2xl h-[90%] bg-gradient-to-b  relative from-[#0a1929]   to-[#020d1a] w-[90%] md:w-[70%]  mx-auto shadow-lg">
         <h2 className="text-xl text-white font-bold text-center mb-4">
           Let's Talk
         </h2>
-        <h3 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white via-blue-200  to-blue-500 bg-clip-text text-transparent mb-6 text-center">
+        <h3 className="text-3xl header md:text-5xl font-bold bg-gradient-to-r from-white via-blue-200  to-blue-500 bg-clip-text text-transparent mb-6 text-center">
           Connect with us
         </h3>
         <form className="flex form-input flex-col gap-4">
