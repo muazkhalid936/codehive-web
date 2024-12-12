@@ -31,7 +31,7 @@ const MainHero = () => {
       </div>
 
       {/* Spline Component */}
-      <div className="flex flex-1 scale-[0.3] sm:scale-50 lg:scale-90 xl:scale-110 absolute -top-[100px]  md:top-5 h-[400px]  w-[850px] -right-[21rem]  md:-right-60 xl:-right-36  justify-end text-white items-end">
+      <div className="flex flex-1 scale-[0.3] sm:scale-50 lg:scale-90 xl:scale-110 absolute -top-[100px]  md:top-5 h-[400px] xl:top-10  w-[850px] -right-[21rem]  md:-right-60 xl:-right-36  justify-end text-white items-end">
         <Spline className="" scene="/Logo animation.spline" />
       </div>
     </div>

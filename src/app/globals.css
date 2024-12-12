@@ -7,7 +7,7 @@
   src: local("Gilroy Black"), local("Gilroy-Black"),
     url("./fonts/Gilroy-Black.woff2") format("woff2"),
     url("./fonts/Gilroy-Black.woff") format("woff"),
-    url("./fonts/Gilroy-Black.ttf") format("truetype");
+    url("./fonts/gilroy-black.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
