@@ -14,7 +14,7 @@ const MainHero = () => {
             SOLUTIONS
           </span>{" "}
           <br />
-          TAILORED TO YOUR BUSINESS NEEDS
+          TAILORED TO YOUR <br /> BUSINESS NEEDS
         </p>
         <p className="mt-4 text-[10px] md:text-base">
           We are a dynamic creative agency, specializing in the design and

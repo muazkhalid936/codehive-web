@@ -51,6 +51,16 @@
     max-width: 1320px;
   }
 }
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1450px;
+  }
+}
+@media (min-width: 1680px) {
+  .container {
+    max-width: 1600px;
+  }
+}
 
 .content_title::before {
   font-weight: 400;
