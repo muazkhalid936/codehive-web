@@ -65,31 +65,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
   height: 100%;
 }
 
 .new-text {
   position: absolute;
   /* width: 100%; */
-  width: 30%;
-  left: -10px;
+  /* width: 30%; */
+  /* left: -10px; */
   text-align: start;
 }
 
 .new-icon-container {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  top: 30%;
-  left: -10px;
+  justify-content: start;
+  /* gap: 20px; */
+  /* top: 35%; */
+  /* left: -10px; */
   color: white;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .new-icon {
-  font-size: 5rem;
+  font-size: 6.5rem;
   /* background-color: #f1f1f1; */
   padding: 20px;
   border-radius: 50%;

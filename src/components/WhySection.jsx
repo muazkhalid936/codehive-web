@@ -27,13 +27,13 @@ const WhySection = () => {
   }, []);
 
   return (
-    <div className="container relative h-screen mb-20 font-extrabold mx-auto flex flex-col justify-center items-center text-2xl md:text-6xl text-white gap-20 ">
+    <div className="container relative h-screen mb-20 font-extrabold mx-auto flex flex-col justify-center items-center text-2xl md:text-6xl xl:text-7xl text-white gap-20 ">
       <img src="/Why/1.png" className=" scale-90" />
 
-      <h1 className="heading h2">Customer-Centric Approach</h1>
+      <h1 className="heading h2 header ">Customer-Centric Approach</h1>
 
-      <h1 className="heading h3">Unrivaled Expertise</h1>
-      <h1 className="heading h4">End-to-End Support</h1>
+      <h1 className="heading h3 header">Unrivaled Expertise</h1>
+      <h1 className="heading h4 header">End-to-End Support</h1>
     </div>
   );
 };

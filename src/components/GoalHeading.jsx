@@ -42,8 +42,8 @@ const GoalHeading = () => {
   }, []);
 
   return (
-    <div className="container flex justify-center items-center h-screen">
-      <h1 className="text-gr text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">
+    <div className="container flex justify-center items-center mx-auto h-screen">
+      <h1 className="text-gr text-2xl  md:text-4xl lg:text-5xl xl:text-7xl text-white header font-bold text-center ">
         Why Choose Us?
       </h1>
     </div>
@@ -51,4 +51,3 @@ const GoalHeading = () => {
 };
 
 export default GoalHeading;
-

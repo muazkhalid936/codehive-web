@@ -8,9 +8,9 @@ const MainHero = () => {
     <div className=" container  overflow-hidden relative pl-10 flex flex-row bg-[#000B17] mx-auto pt-10 xl:pt-20">
       {/* Text Content */}
       <div className="flex w-[50%]   flex-col gap-5 text-white  xl:gap-10 ">
-        <p className="text-[20px] header sm:text-3xl md:text-5xl xl:text-6xl  z-10 font-extrabold !leading-snug">
+        <p className="text-[20px] header sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl  z-10 font-extrabold !leading-snug">
           BESPOKE{" "}
-          <span className="text-[20px] header sm:text-3xl md:text-5xl xl:text-6xl  text-blue-500">
+          <span className="text-[20px] header sm:text-3xl lg:text-6xl md:text-5xl xl:text-7xl  text-blue-500">
             SOLUTIONS
           </span>{" "}
           <br />

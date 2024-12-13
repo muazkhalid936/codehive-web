@@ -105,6 +105,7 @@ const StackingImages = () => {
             type="AI"
             num="01"
             heading="AI & Data Analysis"
+            para="Custom built mobile apps for Android and iOS, tailored to your needs."
           />
         </div>
         <div className="card card-2">
@@ -113,10 +114,12 @@ const StackingImages = () => {
             type="Consulting"
             num="02"
             heading="Consultation"
+            para="Codehive has more than two decades of expertise in the world of experience design, software engineering and cloud technologies."
           />
         </div>
         <div className="card card-3">
           <StackCard
+            para="Custom built mobile apps for Android and iOS, tailored to your needs."
             bg="/services/bg-digital.png"
             type="Digital"
             num="03"
@@ -128,6 +131,7 @@ const StackingImages = () => {
             bg="/services/bg-web.png"
             type="Web"
             heading="Web Development"
+            para="Codehive has more than two decades of expertise in the world of experience design, software engineering and cloud technologies."
             num="04"
           />
         </div>
