@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col  gap-3 md:w-[30%] justify-start items-start">
           <div>
-            <p className="text-6xl text-yellow-500 font-extrabold">
+            <p className="text-7xl header  text-yellow-500 font-extrabold">
               Let's Talk?
             </p>
           </div>

@@ -8,6 +8,7 @@ import WhySection from "../components/WhySection";
 import AnimatedHeading from "../components/AnimatedHeading";
 import OurIndustries from "../components/OurIndustries";
 import GoalHeading from "../components/GoalHeading";
+import Connect from "../components/Connect";
 export default function Home() {
   return (
     <>
@@ -23,6 +24,8 @@ export default function Home() {
         <OurIndustries />
         <Test />
         <ContactForm />
+
+        {/* <Connect /> */}
       </div>
     </>
   );

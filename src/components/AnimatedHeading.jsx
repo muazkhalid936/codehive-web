@@ -61,8 +61,8 @@ const Page = () => {
 
   return (
     <div className="container mx-auto flex h-screen  bg-[#000B17] justify-center items-center">
-      <h1 className="text-white text-5xl  font-bold reveal-type">
-        Our Process{" "}
+      <h1 className="text-white text-7xl !header  !font-extrabold reveal-type">
+        Our Process1
       </h1>
     </div>
   );

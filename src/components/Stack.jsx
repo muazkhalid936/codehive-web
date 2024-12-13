@@ -98,7 +98,7 @@ const StackingImages = () => {
         <h2 className="text-5xl font-bold text-white">Our Services</h2>
       </div> */}
 
-      <div className="cards h-[50vh] md:h-[100vh] container mx-auto">
+      <div className="cards h-[100vh] container mx-auto">
         <div className="card card-1">
           <StackCard
             bg="/services/bg-ai.png"
