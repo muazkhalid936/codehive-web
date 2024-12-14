@@ -39,7 +39,7 @@ const ScrollTextReveal = (params) => {
         textRef.current,
         {
           scale: 0.8,
-          backgroundPosition: "-40% 0", // Move the gradient across the text
+          backgroundPosition: "-80% 0", // Move the gradient across the text
         },
         {
           scale: 1.2,
