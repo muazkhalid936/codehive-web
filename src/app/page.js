@@ -23,9 +23,9 @@ export default function Home() {
 
         <OurIndustries />
         <Test />
-        <ContactForm />
+        {/* <ContactForm /> */}
 
-        {/* <Connect /> */}
+        <Connect />
       </div>
     </>
   );
