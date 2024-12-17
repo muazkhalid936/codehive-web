@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
-
+import { FiArrowUpRight } from "react-icons/fi";
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollAnimation = () => {
@@ -30,7 +30,7 @@ const ScrollAnimation = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=500%",
+        end: "+=1800",
         scrub: true,
         pin: true,
         toggleActions: "play none none none",
@@ -103,32 +103,32 @@ const ScrollAnimation = () => {
       des4: "Trust us to provide the tools and knowledge necessary for better health outcomes. Together, we work towards a happier, healthier you.",
       image: "/Industry/3.png",
     },
-    {
-      title: "Booking",
-      des1: "Simplify your reservations with a platform built for speed and convenience. Whether it's flights, hotels, or events, our system makes booking seamless and stress-free.",
-      des2: "Enjoy a user-friendly interface that allows you to compare options and secure the best deals. Our intuitive design ensures a smooth experience for all users.",
-      des3: "Track and manage your reservations effortlessly with just a few clicks. Stay organized and informed with notifications and updates about your bookings.",
-      des4: "We prioritize your time and convenience by making the entire process simple and straightforward. Your next reservation is just a step away.",
-      image: "/Industry/4.png",
-    },
-    {
-      title: "Ecommerce",
-      des1: "Take your online shopping experience to the next level with fast, secure e-commerce solutions. Explore a wide range of products designed to meet your needs.",
-      des2: "Our platforms offer seamless navigation, quick checkouts, and secure transactions. We prioritize customer satisfaction with efficient, hassle-free shopping.",
-      des3: "From tailored storefronts to advanced analytics, we empower businesses to grow online. Enhance your brand with tools that cater to modern consumer expectations.",
-      des4: "With reliable shipping and top-notch support, we redefine convenience in the e-commerce space. Your business success starts with our innovative solutions.",
-      image: "/Industry/5.png",
-    },
-    {
-      title: "Fitness",
-      des1: "Achieve your health and fitness goals with personalized solutions designed to fit your lifestyle. From strength training to yoga, we cover all aspects of your fitness journey.",
-      des2: "Our virtual and in-person programs offer flexibility and accessibility for everyone. Track your progress with tools that keep you motivated and on track.",
-      des3: "Receive expert guidance from professionals who prioritize your success. Whether you're a beginner or advanced, we provide plans tailored to your abilities.",
-      des4: "Stay consistent and achieve measurable results with programs crafted for long-term success. Let us help you live an active, balanced, and healthy life.",
-      image: "/Industry/6.png",
-    },
+    // {
+    //   title: "Booking",
+    //   des1: "Simplify your reservations with a platform built for speed and convenience. Whether it's flights, hotels, or events, our system makes booking seamless and stress-free.",
+    //   des2: "Enjoy a user-friendly interface that allows you to compare options and secure the best deals. Our intuitive design ensures a smooth experience for all users.",
+    //   des3: "Track and manage your reservations effortlessly with just a few clicks. Stay organized and informed with notifications and updates about your bookings.",
+    //   des4: "We prioritize your time and convenience by making the entire process simple and straightforward. Your next reservation is just a step away.",
+    //   image: "/Industry/4.png",
+    // },
+    // {
+    //   title: "Ecommerce",
+    //   des1: "Take your online shopping experience to the next level with fast, secure e-commerce solutions. Explore a wide range of products designed to meet your needs.",
+    //   des2: "Our platforms offer seamless navigation, quick checkouts, and secure transactions. We prioritize customer satisfaction with efficient, hassle-free shopping.",
+    //   des3: "From tailored storefronts to advanced analytics, we empower businesses to grow online. Enhance your brand with tools that cater to modern consumer expectations.",
+    //   des4: "With reliable shipping and top-notch support, we redefine convenience in the e-commerce space. Your business success starts with our innovative solutions.",
+    //   image: "/Industry/5.png",
+    // },
+    // {
+    //   title: "Fitness",
+    //   des1: "Achieve your health and fitness goals with personalized solutions designed to fit your lifestyle. From strength training to yoga, we cover all aspects of your fitness journey.",
+    //   des2: "Our virtual and in-person programs offer flexibility and accessibility for everyone. Track your progress with tools that keep you motivated and on track.",
+    //   des3: "Receive expert guidance from professionals who prioritize your success. Whether you're a beginner or advanced, we provide plans tailored to your abilities.",
+    //   des4: "Stay consistent and achieve measurable results with programs crafted for long-term success. Let us help you live an active, balanced, and healthy life.",
+    //   image: "/Industry/6.png",
+    // },
   ];
-  
+
   return (
     <div
       ref={containerRef}
@@ -141,27 +141,41 @@ const ScrollAnimation = () => {
         >
           {/* Left Section: Title and Descriptions */}
           <div className="w-1/2 heading">
-            <h2 className="font-bold bg-gradient-to-r from-white via-blue-500 to-blue-600 bg-clip-text text-transparent header text-2xl md:text-4xl lg:text-6xl xl:text-7xl">
+            <h2 className="font-bold bg-gradient-to-r from-white via-blue-500 to-blue-600 bg-clip-text text-transparent main-heading text-2xl md:text-4xl lg:text-6xl xl:text-7xl">
               {item.title}
             </h2>
-            <p className="mt-4 text-lg text-gray-300">{item.des1}</p>
-            <p className="mt-4 text-lg text-gray-300">{item.des2}</p>
-            <p className="mt-4 text-lg text-gray-300">{item.des3}</p>
-            <p className="mt-4 text-lg text-gray-300">{item.des4}</p>
+            <p className="mt-4  text-lg xl:text-xl  text-gray-500">
+              {item.des1}
+            </p>
+            <p className="mt-4  text-lg xl:text-xl  text-gray-500">
+              {item.des2}
+            </p>
+            <p className="mt-4 text-lg xl:text-xl  text-gray-500">
+              {item.des3}
+            </p>
+            <p className="mt-4 text-lg xl:text-xl text-gray-500">{item.des4}</p>
+
+            <div className=" flex justify-start items-center  gap-3">
+              <button className=" mt-2 text-lg xl:text-2xl text-white ">
+                Contact Us
+              </button>
+              <div className=" bg-white text-black mt-4 rounded-full ">
+                <FiArrowUpRight className="w-5 h-5" />
+              </div>
+            </div>
           </div>
           {/* Right Section: Image */}
           <div className="w-1/2">
             <img
               src={item.image}
               alt={`${item.title} image`}
-              className="image w-1/3 h-[60vh] mx-auto rounded-lg shadow-lg"
+              className="image w-1/4 xl:h-[400px] 2xl:h-[500px]   mx-auto rounded-lg shadow-lg"
             />
           </div>
         </div>
       ))}
     </div>
   );
-  
 };
 
 export default ScrollAnimation;

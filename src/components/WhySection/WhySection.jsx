@@ -1,41 +1,136 @@
+"use client";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import "./WhySection.css";
 gsap.registerPlugin(ScrollTrigger);
 
-const WhySection = () => {
+const ImageScrollEffect = () => {
   useEffect(() => {
-    // Array of headings
-    const headings = [".h2", ".h3", ".h4"];
-
-    // Loop through each heading to apply the scroll animation
-    headings.forEach((heading) => {
-      gsap.to(heading, {
-        opacity: 0, // Fade out to 0
-        // duration: 1,
-        // y: -10, // Move upward while fading out
-        scale: 0.8, // Shrink while fading out
-        scrollTrigger: {
-          trigger: heading,
-          start: "top 60%", // Start animation when heading is near the middle of the viewport
-          end: "center center", // Finish animation earlier for a smooth transition
-          scrub: 1, // Smooth scrub effect over scroll
-        },
-      });
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".why-section-container",
+        start: "top TOP",
+        end: "+=1800", // Total scroll length
+        scrub: true,
+        pin: true, // Pin the entire container
+      },
     });
+
+    timeline
+      .to(".why-section-image-1", { opacity: 0, duration: 1 }) // Fade out .image-1
+      .to(".why-section-image-2", { opacity: 1, duration: 1 }, "-=0.5") // Fade in .image-2
+      .to(".why-section-image-2", { opacity: 0, duration: 1 }) // Fade out .image-2
+      .to(".why-section-image-3", { opacity: 1, duration: 1 }, "-=0.5") // Fade in .image-3
+      .to(
+        ".why-section-heading-2",
+        { opacity: 0, duration: 1, y: -20 },
+        "-=1.5"
+      )
+      .to(".why-section-heading-3", { duration: 1, y: -150 }, "-=1.5");
+
+    const headingAnimations = () => {
+      const applyGradient = (selector, startYPercent = -10) => {
+        gsap.to(selector, {
+          opacity: 0,
+          yPercent: -100,
+          scrollTrigger: {
+            trigger: ".why-section-container",
+            start: "top top",
+            end: "+=600",
+            scrub: true,
+          },
+          onStart: () => {
+            const heading = document.querySelector(selector);
+            if (heading) {
+              heading.style.background =
+                "linear-gradient(90deg, white, white, #209dd9)";
+              heading.style.webkitBackgroundClip = "text";
+              heading.style.color = "transparent";
+            }
+          },
+          onReverseComplete: () => {
+            const heading = document.querySelector(selector);
+            if (heading) {
+              heading.style.background = "none";
+              heading.style.color = "inherit";
+            }
+          },
+        });
+      };
+
+      const yPercentValue = -300; // Set the same yPercent value for all headings
+
+      gsap.to(".why-section-heading-2", {
+        scrollTrigger: {
+          trigger: ".why-section-heading-1",
+          start: "top center",
+          end: "+=600",
+          scrub: true,
+        },
+        yPercent: yPercentValue, // Use consistent yPercent
+      });
+
+      gsap.to(".why-section-heading-3", {
+        scrollTrigger: {
+          trigger: ".why-section-heading-1",
+          start: "top center",
+          end: "+=600",
+          scrub: true,
+        },
+        yPercent: yPercentValue, // Use consistent yPercent
+      });
+
+      applyGradient(".why-section-heading-1");
+    };
+
+    headingAnimations();
   }, []);
 
   return (
-    <div className="container relative h-screen mb-20 font-extrabold mx-auto flex flex-col justify-center items-center text-2xl md:text-6xl xl:text-7xl text-white gap-20 ">
-      <img src="/Why/1.png" className=" scale-90" />
+    <>
+      {/* Spacer for scrolling */}
+      {/* <div className="h-screen">a</div> */}
 
-      <h1 className="heading h2 header ">Customer-Centric Approach</h1>
+      {/* Main Section */}
+      <div className="why-section-container container flex flex-col mx-auto text-center text-white h-[100vh] font-bold relative overflow-hidden">
+        {/* Images */}
+        <div className="w-full h-screen flex justify-center items-start">
+          <img
+            src="/Why/1.png"
+            alt="First Image"
+            className="absolute  why-section-img  scale-[0.4] md:scale-[0.7] why-section-image-1 2xl:scale-100 opacity-100"
+          />
+          <img
+            src="/Why/2.png"
+            alt="Second Image"
+            className="absolute  why-section-img  why-section-image-2   scale-[0.4] md:scale-[0.7] 2xl:scale-100 opacity-0"
+          />
+          <img
+            src="/Why/3.png"
+            alt="Third Image"
+            className="absolute  why-section-img   scale-[0.4] why-section-image-3  opacity-0 md:scale-[0.7] 2xl:scale-100"
+          />
+        </div>
 
-      <h1 className="heading h3 header">Unrivaled Expertise</h1>
-      <h1 className="heading h4 header">End-to-End Support</h1>
-    </div>
+        {/* Headings */}
+        <div className="relative why-section-heading-section   flex flex-col gap-20">
+          <h1 className="why-section-heading-1 text-2xl md:text-5xl main-heading lg:text-6xl 3xl:text-7xl">
+            Unrivaled Expertise
+          </h1>
+          <h1 className="why-section-heading-2  3xl:text-7xl text-2xl md:text-5xl main-heading lg:text-6xl">
+            Customer-Centric Approach
+          </h1>
+          <h1 className="why-section-heading-3 text-2xl 3xl:text-7xl md:text-5xl main-heading lg:text-6xl">
+            End-to-End Support
+          </h1>
+        </div>
+      </div>
+
+      {/* Spacer for scrolling */}
+      {/* <div className="h-screen">a</div> */}
+    </>
   );
 };
 
-export default WhySection;
+export default ImageScrollEffect;

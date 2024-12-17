@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis"; // Import Lenis
-import Card from "./Card";
+'use client';
+
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from '@studio-freight/lenis'; // Import Lenis
+import Card from './Card';
 gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalScroll = () => {
@@ -10,29 +12,29 @@ const HorizontalScroll = () => {
 
   const cardsData = [
     {
-      head: "Al Abour",
-      para: "Your description for Al Abour.",
-      bgImg: "/Homapage/carosuel/al.jpg",
+      head: 'Al Abour',
+      para: 'Your description for Al Abour.',
+      bgImg: '/Homapage/carosuel/al.jpg',
     },
     {
-      head: "Caption Gen",
-      para: "Your description for Caption Gen.",
-      bgImg: "/Homapage/carosuel/caption.png",
+      head: 'Caption Gen',
+      para: 'Your description for Caption Gen.',
+      bgImg: '/Homapage/carosuel/caption.png',
     },
     {
-      head: "Clixpox",
-      para: "Your description for Clixpox.",
-      bgImg: "/Homapage/carosuel/clixpox.png",
+      head: 'Clixpox',
+      para: 'Your description for Clixpox.',
+      bgImg: '/Homapage/carosuel/clixpox.png',
     },
     {
-      head: "Doctor Booking App",
-      para: "Your description for Doctor Booking App.",
-      bgImg: "/Homapage/carosuel/doctor.jpg",
+      head: 'Doctor Booking App',
+      para: 'Your description for Doctor Booking App.',
+      bgImg: '/Homapage/carosuel/doctor.jpg',
     },
     {
-      head: "Email App",
-      para: "Your description for Email App.",
-      bgImg: "/Homapage/carosuel/Email.jpg",
+      head: 'Email App',
+      para: 'Your description for Email App.',
+      bgImg: '/Homapage/carosuel/Email.jpg',
     },
     // {
     //   head: "Faaolun",
@@ -80,7 +82,7 @@ const HorizontalScroll = () => {
     const lenis = new Lenis({
       smooth: true,
       smoothTouch: true, // Ensures smooth scrolling on touch devices
-      direction: "vertical", // Lenis scroll direction
+      direction: 'vertical', // Lenis scroll direction
     });
 
     // Update Lenis and ScrollTrigger on each animation frame
@@ -96,15 +98,15 @@ const HorizontalScroll = () => {
     });
 
     const container = containerRef.current;
-    const cards = container.querySelector(".card-row");
+    const cards = container.querySelector('.card-row');
     const totalScrollWidth = cards.scrollWidth - container.clientWidth;
 
     gsap.to(cards, {
       x: -totalScrollWidth, // Horizontal scroll effect
-      ease: "none",
+      ease: 'none',
       scrollTrigger: {
         trigger: container,
-        start: "top top",
+        start: 'top top',
         end: `+=${cards.scrollWidth}`, // Total scroll amount
         scrub: true,
         pin: true,
@@ -123,21 +125,21 @@ const HorizontalScroll = () => {
         ref={containerRef}
         className=""
         style={{
-          height: "100vh",
-          overflow: "hidden",
-          position: "relative",
+          height: '100vh',
+          overflow: 'hidden',
+          position: 'relative',
         }}
       >
         <div
           className="card-row"
           style={{
-            display: "flex",
-            gap: "20px",
-            position: "absolute",
-            top: "50%",
-            left: "0",
-            transform: "translateY(-50%)",
-            willChange: "transform", // GPU acceleration
+            display: 'flex',
+            gap: '20px',
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            transform: 'translateY(-50%)',
+            willChange: 'transform', // GPU acceleration
           }}
         >
           {cardsData.map(({ head, para, bgImg }, index) => (

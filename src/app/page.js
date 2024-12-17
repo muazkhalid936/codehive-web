@@ -1,29 +1,41 @@
-"use client";
 import OurProcess from "../components/OurProcess/OurProcess";
-import MainHero from "../components/Hero/MainHero";
-import ContactForm from "../components/ContactForm/Contact";
+import MainHero from "../components/MainHero";
+import ContactForm from "../components/Contact";
 import Stack from "../components/OurServices/Stack";
-import Test from "../components/OurRecentworks/Test";
+import Test from "../components/OurRecentWorks/Test";
 import WhySection from "../components/WhySection/WhySection";
 import OurIndustries from "../components/OurIndustries/OurIndustries";
-import Connect from "../components/ConnectForm/Connect";
-import TextReveal from "../components/AnimatedHeading/TextReveal";
+import Navbar from "../components/Navbar";
+import LongRevealHeading from "../components/LongRevealHeading/LongRevealHeading";
+import ShortRevealHeading from "../components/ShortRevealHeading/ShortRevealHeading";
 export default function Home() {
   return (
     <>
-      <div className="bg-[#000B17]">
+      <Navbar />
+      <div className="bg-[#000B17] overflow-x-hidden">
         <MainHero />
-        <TextReveal text="Why You Choose Us?" />
+        <LongRevealHeading text="Why You Choose Us?" />
+        <div className="h-[30vh]">a</div>
         <WhySection />
-        <TextReveal text="Our Services" />
+        <div className="-mt-20">
+          <ShortRevealHeading text="Our Services" />
+        </div>
+        <div className="h-[20vh]">a</div>
         <Stack />
-        <TextReveal text="Our Process" />
+
+        <ShortRevealHeading text="Our Process" />
+        <div className="h-[30vh]">a</div>
         <OurProcess />
-        <TextReveal text="Our Industries" />
+        <ShortRevealHeading text="Our Industries" />
+
+        <div className="h-[20vh]">a</div>
         <OurIndustries />
-        <TextReveal text="Our Recent Works" />
+        <div className="-mt-[20vh]">
+          <LongRevealHeading text="Our Recent Works" />
+        </div>
+        <div className="h-[40vh]">a</div>
         <Test />
-        <Connect />
+        <ContactForm />
       </div>
     </>
   );

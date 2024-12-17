@@ -1,92 +1,94 @@
-import { useEffect } from "react";
-import "./Stack.css";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-import StackCard from "./StackCard";
+'use client';
+
+import { useEffect } from 'react';
+import './Stack.css';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import StackCard from './StackCard';
 const StackingImages = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     let timeln = gsap.timeline({
       scrollTrigger: {
-        trigger: ".cards",
+        trigger: '.cards',
         pin: true,
         pinSpacing: true,
-        start: "top top",
-        end: "+=2000",
+        start: 'top top',
+        end: '+=2000',
         scrub: 1,
       },
     });
 
-    timeln.addLabel("card1");
-    timeln.to(".card-1", {
+    timeln.addLabel('card1');
+    timeln.to('.card-1', {
       yPercent: 0,
       opacity: 1,
     });
 
-    timeln.from(".card-2", {
+    timeln.from('.card-2', {
       yPercent: 75,
       opacity: 0,
     });
-    timeln.addLabel("card2");
+    timeln.addLabel('card2');
 
     timeln.to(
-      ".card-1",
+      '.card-1',
       {
         scale: 0.98,
         yPercent: -10,
         opacity: 0.5,
         duration: 0.5,
       },
-      "-=0.3"
+      '-=0.3'
     );
 
-    timeln.to(".card-2", {
+    timeln.to('.card-2', {
       yPercent: 0,
       opacity: 1,
     });
 
-    timeln.from(".card-3", {
+    timeln.from('.card-3', {
       yPercent: 75,
       opacity: 0,
     });
-    timeln.addLabel("card3");
+    timeln.addLabel('card3');
 
     timeln.to(
-      ".card-2",
+      '.card-2',
       {
         scale: 0.98,
         yPercent: -10,
         opacity: 0.6,
         duration: 0.5,
       },
-      "-=0.3"
+      '-=0.3'
     );
 
-    timeln.to(".card-3", {
+    timeln.to('.card-3', {
       yPercent: 0,
       opacity: 1,
     });
 
-    timeln.from(".card-4", {
+    timeln.from('.card-4', {
       yPercent: 75,
       // opacity: 0,
     });
-    timeln.addLabel("card4");
+    timeln.addLabel('card4');
 
     timeln.to(
-      ".card-3",
+      '.card-3',
       {
         scale: 0.98,
         yPercent: -10,
         opacity: 0.6,
         duration: 0.5,
       },
-      "-=0.3"
+      '-=0.3'
     );
 
-    timeln.to(".card-4", {
+    timeln.to('.card-4', {
       yPercent: 0,
       opacity: 1,
     });
@@ -101,7 +103,7 @@ const StackingImages = () => {
       <div className="cards h-[100vh] container mx-auto">
         <div className="card card-1">
           <StackCard
-            bg="/services/bg-ai.png"
+            bg="/services/bg-consult.png"
             type="AI"
             num="01"
             heading="AI & Data Analysis"
@@ -120,7 +122,7 @@ const StackingImages = () => {
         <div className="card card-3">
           <StackCard
             para="Custom built mobile apps for Android and iOS, tailored to your needs."
-            bg="/services/bg-digital.png"
+            bg="/services/bg-consult.png"
             type="Digital"
             num="03"
             heading="Digital Transformation"
@@ -128,7 +130,7 @@ const StackingImages = () => {
         </div>
         <div className="card card-4">
           <StackCard
-            bg="/services/bg-web.png"
+            bg="/services/bg-consult.png"
             type="Web"
             heading="Web Development"
             para="Codehive has more than two decades of expertise in the world of experience design, software engineering and cloud technologies."

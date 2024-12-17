@@ -1,9 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import { FiArrowUpRight, FiMenu } from "react-icons/fi";
-import { FaChevronDown } from "react-icons/fa";
+'use client';
+import React, { useState } from 'react';
+import { FiArrowUpRight, FiMenu } from 'react-icons/fi';
+import { FaChevronDown } from 'react-icons/fa';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,9 +24,12 @@ const Navbar = () => {
         </div>
         <div className=" hidden lg:flex gap-4 text-sm lg:text-base  xl:text-xl lg:gap-3 xl:gap-5">
           <Link href="/">Home</Link>
-          <Link href="/">About Us</Link>
-          <Link className="flex  justify-center gap-1 items-center" href="/">
-            Services <FaChevronDown className="text-blue-600 text-base" />{" "}
+          <Link href="/about-us">About Us</Link>
+          <Link
+            className="flex  justify-center gap-1 items-center"
+            href="/services"
+          >
+            Services <FaChevronDown className="text-blue-600 text-base" />{' '}
           </Link>
           <Link className="flex  justify-center gap-1 items-center" href="/">
             Products
@@ -49,7 +52,7 @@ const Navbar = () => {
         <div className="lg:hidden" onClick={toggleSidebar}>
           <FiMenu
             className={`w-6 h-6 cursor-pointer duration-300 ease-in-out ${
-              isSidebarOpen ? "rotate-90" : ""
+              isSidebarOpen ? 'rotate-90' : ''
             }`}
           />
         </div>
@@ -63,17 +66,17 @@ const Navbar = () => {
           />
           <div
             className={`fixed top-0 left-0 w-64 h-full bg-[#00011b] text-white p-4 z-50 transition-transform transform ${
-              isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+              isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
             }`}
           >
             {/* <h2 className="text-lg font-bold">Menu</h2> */}
             <Link href="/" className="block py-2">
               Home
             </Link>
-            <Link href="/" className="block py-2">
+            <Link href="/about-us" className="block py-2">
               About Us
             </Link>
-            <Link href="/" className="block py-2">
+            <Link href="/services" className="block py-2">
               Services
             </Link>
             <Link href="/" className="block py-2">

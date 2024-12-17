@@ -1,90 +1,47 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy Black"), local("Gilroy-Black"),
-    url("./fonts/Gilroy-Black.woff2") format("woff2"),
-    url("./fonts/Gilroy-Black.woff") format("woff"),
-    url("./fonts/gilroy-black.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
+  font-family: 'Gilroy';
+  src: local('Gilroy Black'), local('Gilroy-Black'),
+    url('./fonts/Gilroy-Black.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Lato";
-  src: local("Lato Regular"), local("Lato-Regular"),
-    url("./fonts/Lato-Regular/Lato-Regular.woff2") format("woff2"),
-    url("./fonts/Lato-Regular/Lato-Regular.woff") format("woff"),
-    url("./fonts/Lato-Regular/Lato-Regular.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
+  font-family: 'Lato';
+  src: local('Lato-Black'), local('Lato-Black'),
+    url('./fonts/Lato-Regular/Lato-Black.ttf') format('truetype');
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
-  /* font-family: "Roboto", sans-serif; */
-  /* overflow: hidden; */
-}
-
-.header {
-  font-family: "Gilroy", sans-serif !important;
+  /* border: 1px solid red;
+  outline: 1px solid blue;
+  color: yellow; */
 }
 .form-input input {
   @apply bg-transparent border-none outline-none border-b-2 border-white text-white;
 }
 
-/* .container {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
+.container {
   margin-left: auto;
+  margin-right: auto;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 640px) {
   .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
+.main-heading {
+  font-family: 'Gilroy', sans-serif !important;
+  font-weight: bold;
 }
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-@media (min-width: 1500px) {
-  .container {
-    max-width: 1450px;
-  }
-}
-@media (min-width: 1680px) {
-  .container {
-    max-width: 1600px;
-  }
-} */
 
 .content_title::before {
   font-weight: 400;

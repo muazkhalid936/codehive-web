@@ -215,7 +215,7 @@ const StackingImages = () => {
 
   return (
     <div className="bg-[#000B17] container  mx-auto ">
-      <div className="new-cards h-[50vh] items-center md:h-[100vh] mx-auto">
+      <div className="new-cards h-[50vh]  items-center md:h-[100vh] mx-auto">
         <div className="flex md:w-1/2 flex-col gap-5">
           {" "}
           <div className="new-icon-container gap-5">
@@ -226,7 +226,7 @@ const StackingImages = () => {
           </div>
           <div className="new-text-section mt-32 text-white">
             <div className="new-text flex xl:text-xl flex-col gap-4 new-text-1">
-              <span className="font-bold header text-2xl md:text-4xl lg:text-5xl xl:text-7xl bg-gradient-to-r from-white via-blue-500 to-blue-600 bg-clip-text text-transparent">
+              <span className="font-bold text-[20px] main-heading sm:text-3xl md:text-5xl xl:text-6xl  bg-gradient-to-r from-white via-blue-500 to-blue-600 bg-clip-text text-transparent">
                 Project <br /> Vision
               </span>
               We provide bespoke software solutions powered by cutting-edge
@@ -235,7 +235,7 @@ const StackingImages = () => {
             </div>
 
             <div className="new-text flex flex-col xl:text-xl gap-4 new-text-2">
-              <span className="font-bold header text-2xl md:text-4xl lg:text-5xl xl:text-7xl bg-gradient-to-r from-white via-blue-500 to-blue-600 bg-clip-text text-transparent">
+              <span className="font-bold text-[20px] main-heading sm:text-3xl md:text-5xl xl:text-6xl  bg-gradient-to-r from-white via-blue-500 to-blue-600 bg-clip-text text-transparent">
                 Innovative <br /> Solutions
               </span>
               Delivering tailored solutions that harness the power of innovation
@@ -244,7 +244,7 @@ const StackingImages = () => {
             </div>
 
             <div className="new-text flex flex-col gap-4 xl:text-xl new-text-3">
-              <span className="font-bold header text-2xl md:text-4xl lg:text-5xl xl:text-7xl bg-gradient-to-r from-white via-blue-500 to-blue-600  bg-clip-text text-transparent">
+              <span className="font-bold text-[20px] main-heading sm:text-3xl md:text-5xl xl:text-6xl  bg-gradient-to-r from-white via-blue-500 to-blue-600  bg-clip-text text-transparent">
                 Future <br /> Ready
               </span>
               Empowering organizations to stay ahead of the curve with scalable,
@@ -252,7 +252,7 @@ const StackingImages = () => {
             </div>
 
             <div className="new-text flex flex-col gap-4 xl:text-xl new-text-4">
-              <span className="font-bold header text-2xl md:text-4xl lg:text-5xl xl:text-7xl bg-gradient-to-r from-white via-blue-500 to-blue-600  bg-clip-text text-transparent">
+              <span className="font-bold text-[20px] main-heading sm:text-3xl md:text-5xl xl:text-6xl  bg-gradient-to-r from-white via-blue-500 to-blue-600  bg-clip-text text-transparent">
                 Global <br /> Impact
               </span>
               Collaborating with industries worldwide to create meaningful and
@@ -265,28 +265,28 @@ const StackingImages = () => {
           <div className="new-card ss new-card-1">
             <img
               src="/process/1.jpg"
-              className="rounded-3xl h-[50vh] border-2 border-blue-500 w-[60%]"
+              className="rounded-3xl our-process-main-pic border-2 border-blue-500 "
               alt="1"
             />
           </div>
           <div className="new-card ss new-card-2">
             <img
               src="/process/bg.jpg"
-              className="rounded-3xl h-[50vh] border-2 border-blue-500 w-[60%]"
+              className="rounded-3xl our-process-main-pic border-2 border-blue-500 "
               alt="1"
             />
           </div>
           <div className="new-card ss new-card-3">
             <img
               src="/process/1.jpg"
-              className="rounded-3xl h-[50vh] border-2 border-blue-500 w-[60%]"
+              className="rounded-3xl our-process-main-pic border-2 border-blue-500 "
               alt="1"
             />
           </div>
           <div className="new-card ss new-card-4">
             <img
               src="/process/bg.jpg"
-              className="rounded-3xl h-[50vh] border-2 border-blue-500 w-[60%]"
+              className="rounded-3xl our-process-main-pic border-2 border-blue-500 "
               alt="1"
             />
           </div>
